@@ -11,10 +11,7 @@ mainpitch:
     you.
 
     They all have in mind the Slimming World principles and all the recipes have the syns and Health Extra Options used. I’m trying to discover new flavours, trying new veggies, new dishes and once in a while I love to do a vegetarian dish too. I’m not vegetarian but I think all of us should make an effort to remove fish and meat once in a while. 
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+description: ...
 intro:
   blurbs:
     - image: /img/coffee.png
