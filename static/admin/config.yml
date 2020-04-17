@@ -27,6 +27,42 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Meal type"
+        name: "meal_type"
+        widget: "select"
+        multiple: true
+        options:
+          - { label: "Breakfast", value: "Breakfast" }
+          - { label: "Appettizer", value: "Appettizer" }
+          - { label: "Main Meal", value: "Main" }
+          - { label: "Dessert", value: "Dessert" }
+          - { label: "Snack", value: "Snack" }
+      - label: "Syn Classification"
+        name: "syn_classification"
+        widget: "select"
+        multiple: true
+        options:
+          - { label: "Syn Free", value: "Free" }
+          - { label: "Very Low Syns", value: "VeryLowSyn" }
+          - { label: "Low Syn", value: "LowSyn" }
+          - { label: "No Classification", value: "None" }
+      - { name: "Ingredients", label: "Ingredients",  widget: "markdown"}
+      - { name: "Procedure", label: "Procedure",  widget: "markdown"}
+      - label: "Servings"
+        name: "servings"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 20
+        step: 1
+      - {label: "Total Syns", name: "total_syns", widget: "string"}
+      - {label: "Total HE A", name: "total_hea", widget: "string"}
+      - {label: "Total HE B", name: "total_heb", widget: "string"}
+      - {label: "Syns by serving", name: "serving_syns", widget: "string"}
+      - {label: "HE A by serving", name: "serving_hea", widget: "string"}
+      - {label: "HE B by serving", name: "serving_heb", widget: "string"}
+      - {label: "Time", name: "time", widget: "string"}
 
   - name: "pages"
     label: "Pages"
