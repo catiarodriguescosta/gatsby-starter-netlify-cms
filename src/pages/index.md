@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: a few syns a day..
+title: a few syns a day...
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: keeps doctor away
