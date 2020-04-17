@@ -5,12 +5,12 @@ image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: keeps doctor away
 mainpitch:
-  title: Why Kaldi
-  description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+  title: Welcome
+  description: >-
+    This blog is plenty of good recipes and tips that could help you and inspire
+    you.
+
+    They all have in mind the Slimming World principles and all the recipes have the syns and Health Extra Options used. I’m trying to discover new flavours, trying new veggies, new dishes and once in a while I love to do a vegetarian dish too. I’m not vegetarian but I think all of us should make an effort to remove fish and meat once in a while. 
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
