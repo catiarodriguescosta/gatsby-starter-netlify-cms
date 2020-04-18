@@ -1,0 +1,28 @@
+///*----------------------------------*\
+//  #PAGE
+//\*----------------------------------*/
+//
+// Page-level styling (e.g. HTML and BODY elements).
+//
+//\*----------------------------------*/
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+    color: $colour-primary;
+    font-size: 62.5%;
+    font-weight: normal;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 15px;
+    font-family: $font-primary;
+    @include font-size($base-font-size, $base-line-height);
+    -webkit-font-smoothing: antialiased;
+}

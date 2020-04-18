@@ -22,8 +22,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,700;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $font-primary: 'Montserrat', sans-serif;
 $font-secondary: "Barlow Semi Condensed", sans-serif;
@@ -32,7 +31,7 @@ $font-quaternary: "Pacifico", serif;
 
 // Base Sizes
 $base-font-size: 18;
-$base-line-height: $global-scale-ratio; // see settings/global
+$base-line-height: $global-scale-ratio*1.2; // see settings/global
 
 // In Ascending Order to adhere to SASS scope / cascade
 $size-micro: 10;

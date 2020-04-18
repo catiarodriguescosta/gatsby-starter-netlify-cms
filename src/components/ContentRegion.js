@@ -18,17 +18,14 @@ const ContentContainer = styled.div`
     flex-direction : column;
     align-items: center;
     justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 `
-const ContentHeading  = styled.h2`
-  font-family: "abril Fatface";
-  padding-bottom: 20px;
-  padding-top: 20px;
+const ContentHeading  = styled.h3`
 `
 
 const ContentText = styled.p`
     text-align: center;
-    padding-bottom: 20px;
-
 `
 
 const ContentRegion = ({ Heading, Text, Background}) => (
