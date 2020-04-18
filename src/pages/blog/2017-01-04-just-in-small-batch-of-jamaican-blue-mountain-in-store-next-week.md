@@ -1,16 +1,29 @@
 ---
-templateKey: 'blog-post'
-title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
+templateKey: blog-post
+title: "Just in: small batch of Jamaican Blue Mountain in store next week"
 date: 2017-01-04T15:04:10.000Z
+description: We’re proud to announce that we’ll be offering a small batch of
+  Jamaica Blue Mountain coffee beans in our store next week.
 featuredpost: true
-description: >-
-  We’re proud to announce that we’ll be offering a small batch of Jamaica Blue
-  Mountain coffee beans in our store next week.
+featuredimage: /img/chemex.jpg
 tags:
   - jamaica
   - green beans
   - flavor
   - tasting
+meal_type:
+  - Appettizer
+syn_classification: Very Low Syn
+Ingredients: 1. kdsg
+Procedure: 1. kdsg
+servings: 4
+total_syns: "30"
+total_hea: "1"
+total_heb: "1"
+serving_syns: "8"
+serving_hea: "1"
+serving_heb: "1"
+time: 20min
 ---
 
 We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
