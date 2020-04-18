@@ -1,0 +1,51 @@
+///*----------------------------------*\
+//  #SPACING SETTINGS
+//\*----------------------------------*/
+//
+// The spacing system is created by defining a scale of non-linear (spacing) values using our
+// base values ($global-scale-ratio / $global-baseline) and a multiplier ($global-spacing-factor).
+// Should you need to change how the spacing works you can update the values in settings/global.
+//
+//  Ref: https://medium.com/codyhouse/create-your-design-system-part-4-spacing-895c9213e2b9
+//
+//\*----------------------------------*/
+
+// How many grid lines should our spacing unit variants span?
+// Each value should be an unitless integer.
+// Based on a fibonacci sequence
+
+$global-spacing-factor-s: 1; // 10px / 1rem
+$global-spacing-factor: 2; // 20px / 2rem
+$global-spacing-factor-m: 4; // 50px / 5rem
+$global-spacing-factor-l: 8; // 100px / 10rem
+$global-spacing-factor-xl: 17; // 200px / 20rem
+
+// Spacing values are determined based on your project’s global baseline grid.
+// It is not recommended that you modify these following variables
+// (it can break your vertical rhythm), but if you need to, you can.
+
+$global-spacing-s: round($global-scale-ratio * $global-spacing-factor-s) * $global-baseline; // 10
+$global-spacing: round($global-scale-ratio * $global-spacing-factor) * $global-baseline; // 20
+$global-spacing-m: round($global-scale-ratio * $global-spacing-factor-m) * $global-baseline; // 50
+$global-spacing-l: round($global-scale-ratio * $global-spacing-factor-l) * $global-baseline; // 100
+$global-spacing-xl: round($global-scale-ratio * $global-spacing-factor-xl) * $global-baseline; // 200
+
+// Check that the chosen size factors are unitless, integer numbers.
+@each $_spacing-unit
+    in $global-spacing-factor-s
+    $global-spacing-factor-m
+    $global-spacing-factor-l
+    $global-spacing-factor-xl
+{
+    @if (type-of($_spacing-unit) == number) {
+        @if (unitless($_spacing-unit) == false) {
+            @error "`#{$_spacing-unit}` needs to be unitless.";
+        }
+
+        @if ($_spacing-unit != ceil($_spacing-unit)) {
+            @error "`#{$_spacing-unit}` needs to be an integer.";
+        }
+    } @else {
+        @error "`#{$_spacing-unit}` needs to be a number.";
+    }
+}

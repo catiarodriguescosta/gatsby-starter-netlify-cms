@@ -1,0 +1,19 @@
+///*----------------------------------*\
+//  #ANIMATION SETTINGS
+//\*----------------------------------*/
+//
+// Easing Types
+// Cubic Bezier performs better than regular easing types e.g "linear"
+//
+//\*----------------------------------*/
+
+// Usage:
+// transition: 0.6s $ease-in-out transform;
+
+$ease-in: cubic-bezier(0.82, 0, 1, 0.64);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-out: cubic-bezier(0.2, 0.47, 0.43, 0.97);
+$linear: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$burger-in: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+$burger-out: cubic-bezier(0.22, 0.61, 0.36, 1);

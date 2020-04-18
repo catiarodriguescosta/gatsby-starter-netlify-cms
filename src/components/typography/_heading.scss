@@ -1,0 +1,156 @@
+///*----------------------------------*\
+//  #HEADINGS
+//\*----------------------------------*/
+//
+//  Define our Heading Elements/Classes.
+//  We are able to utilise semantic H1-H6 but also override the presentation using the class convention
+//
+//\*----------------------------------*/
+//
+// @param {*} elements - expects an element tag. recommended h1 - h6
+// @param {*} classes - expects desired class name
+// @param {*} font-size - expects a base font-size with option to add different sizes at different media queries
+//
+// Usage:
+// <h1 class="t-heading-beta"></h1>
+
+$headings: (
+    (
+        elements: (
+            h1
+        ),
+        classes: (
+            "alpha"
+        ),
+        font-size: (
+            base: $size-epsilon,
+            $mq-tab--lrg: $size-delta,
+            $mq-desk--med: $size-gamma,
+            $mq-desk--lrg: $size-beta,
+            $mq-desk--xlrg: $size-alpha
+        )
+    ),
+    (
+        elements: (
+            h2
+        ),
+        classes: (
+            "beta"
+        ),
+        font-size: (
+            base: $size-epsilon,
+            $mq-tab--sml: $size-beta
+        )
+    ),
+    (
+        elements: (
+            h3
+        ),
+        classes: (
+            "gamma"
+        ),
+        font-size: (
+            base: $size-gamma
+        )
+    ),
+    (
+        elements: (
+            h4
+        ),
+        classes: (
+            "delta"
+        ),
+        font-size: (
+            base: $size-delta
+        )
+    ),
+    (
+        elements: (
+            h5
+        ),
+        classes: (
+            "epsilon"
+        ),
+        font-size: (
+            base: $size-epsilon
+        )
+    ),
+    (
+        elements: (
+            h6
+        ),
+        classes: (
+            "zeta"
+        ),
+        font-size: (
+            base: $size-zeta
+        )
+    )
+);
+
+@mixin heading-styles($rules, $mq: null, $fs: null) {
+    $size: map_get($rules, font-size);
+    $font-size: map_get($size, base);
+
+    @if ($mq != "base") {
+        @include mq($mq, min) {
+            @include font-size($fs);
+        }
+    } @else {
+        @if (map_has_key($rules, line-height)) {
+            @include font-size($font-size, map_get($rules, line-height));
+        } @else {
+            @include font-size($font-size);
+        }
+    }
+}
+
+/* postcss-bem-linter: ignore */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*="t-heading"] {
+    margin: 0;
+    font-weight: normal;
+    text-transform: none;
+}
+
+$font-families: (
+    "primary": $font-primary,
+    "secondary": $font-secondary
+);
+
+// Font Family
+.t-font {
+    @each $name, $font-family in $font-families {
+        &-#{$name} {
+            font-family: #{$font-family};
+        }
+    }
+}
+
+@each $rule in $headings {
+    $elements: map_get($rule, elements);
+    $classes: map_get($rule, classes);
+    $sizes: map_get($rule, font-size);
+
+    @each $size in $sizes {
+        $mq: nth($size, 1);
+        $fs: nth($size, 2);
+
+        @each $element in $elements {
+            #{$element} {
+                @include heading-styles($rule, $mq, $fs);
+            }
+        }
+
+        @each $class in $classes {
+            .t-heading-#{$class} {
+                @include heading-styles($rule, $mq, $fs);
+            }
+        }
+    }
+}

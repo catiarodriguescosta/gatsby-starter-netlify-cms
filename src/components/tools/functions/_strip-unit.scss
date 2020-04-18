@@ -1,0 +1,23 @@
+///*----------------------------------*\
+//  #Strip Unit
+//\*----------------------------------*/
+//
+//  Remove the unit of a length
+//
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+///
+//\*----------------------------------*/
+//
+//  Usage:
+//  $length: 42px;
+//  $value: strip-unit($length);
+//          -> 42
+
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

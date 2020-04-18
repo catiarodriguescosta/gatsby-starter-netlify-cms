@@ -1,0 +1,70 @@
+///*----------------------------------*\
+//  #COPY
+//\*----------------------------------*/
+//
+//  Define our Paragraph Elements/Classes.
+//  We are able to utilise semantic <p>, <small> elements but also override the presentation using the class convention
+//
+//\*----------------------------------*/
+//
+// Usage:
+// <p class="t-copy-alpha"></p>
+
+$copy: (
+    (
+        classes: (
+            "alpha"
+        ),
+        font-size: $size-delta
+    ),
+    (
+        classes: (
+            "beta"
+        ),
+        font-size: $size-epsilon
+    ),
+    (
+        classes: (
+            "gamma"
+        ),
+        font-size: $size-gamma
+    ),
+    (
+        classes: (
+            "delta"
+        ),
+        font-size: $size-delta
+    ),
+    (
+        classes: (
+            "epsilon"
+        ),
+        font-size: $size-epsilon
+    ),
+    (
+        classes: (
+            "zeta"
+        ),
+        font-size: $size-zeta
+    )
+);
+
+@mixin copy-styles($rules) {
+    $size: map_get($rules, font-size);
+
+    @if (map_has_key($rules, line-height)) {
+        @include font-size($size, map_get($rules, line-height));
+    } @else {
+        @include font-size($size);
+    }
+}
+
+@each $rule in $copy {
+    $classes: map_get($rule, classes);
+
+    @each $class in $classes {
+        .t-font-#{$class} {
+            @include copy-styles($rule);
+        }
+    }
+}

@@ -1,0 +1,39 @@
+///*----------------------------------*\
+//  #COLOUR SETTINGS
+//\*----------------------------------*/
+//
+// Set up a colour palette which allows us to theme the entire project from one location
+//
+//\*----------------------------------*/
+
+//--- Generic Colours
+$colour-black: #1a2844;
+$colour-white: #fff;
+$colour-serenity: #ea7878;
+$colour-correllian: #d6c38f;
+$colour-falcon: #dce3e3;
+$colour-citadel: #f3f2f1;
+
+//--- Hierarchical Colours
+$colour-primary: $colour-black;
+$colour-secondary: $colour-white;
+$colour-tertiary: $colour-serenity;
+$colour-quaternary: $colour-correllian;
+$colour-quinary: $colour-falcon;
+$colour-senary: $colour-citadel;
+
+// GLOBAL Colour Map - see: utilities/util
+$colours: (
+    primary: $colour-primary,
+    secondary: $colour-secondary,
+    tertiary: $colour-tertiary,
+    quaternary: $colour-quaternary,
+    quinary: $colour-quinary,
+    senary: $colour-senary
+);
+
+//--- States
+$colour-error: #b42c2c;
+$colour-success: #090;
+$colour-notice: #ec921f;
+$colour-disabled: #dcdddf;

@@ -1,0 +1,42 @@
+///*----------------------------------*\
+//  #CONTAINER
+//\*----------------------------------*/
+//
+//  A structural element that allows containerisation of objects and components i.e. Grid etc
+//
+//\*----------------------------------*/
+//
+//  Usage:
+//
+//  <div class="o-container"> ... </div>
+
+.o-container {
+    position: relative;
+    width: 100%;
+    max-width: #{$global-base-width}px;
+    margin: 0 auto;
+    padding: 0 $global-spacing;
+
+    $mq-global-base-width : $global-base-width * 1px;
+
+    @include mq($mq-global-base-width, min) {     
+        padding: 0;
+    }
+
+    &--small {
+        max-width: 670px;
+    }
+
+    &--full {
+        max-width: 100%;
+    }
+
+    &--medium {
+        max-width: $mq-tab--lrg;
+        
+        @include mq($mq-tab--lrg, max) {     
+            padding: 0 $global-spacing-m;
+        }
+    }
+    
+}

@@ -1,0 +1,102 @@
+///*----------------------------------*\
+//  #FLEXIBLE MEDIA
+//\*----------------------------------*/
+//
+//  For use with media embeds – such as videos, slideshows, or even images –
+//  that need to retain a specific aspect ratio but adapt to the width of their
+//  containing element
+//  REF: suit-flex-embed v1.4.0 | MIT License | github.com/suitcss
+//
+//\*----------------------------------*/
+
+// Usage:
+//
+//  <div class="o-flex-media  o-flex-media--4by3">
+//      <iframe class="o-flex-media-item" src="..."></iframe>
+//  </div>
+//
+//  <div class="o-flex-media  o-flex-media--4by3">
+//      <img class="o-flex-media__item" src="..." alt="">
+//  </div>
+//
+//  <div class="o-flex-media  o-flex-media--16by9">
+//      [iframe|object|embed]
+//  </div>
+//
+//  Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
+//      e.g. To create a 16:9 ratio, we do the following:
+//          (9 / 16) * 100 = 56.25
+
+$ratios: (
+    "3by1": (
+        3 1
+    ),
+    "2by1": (
+        2 1
+    ),
+    "16by9": (
+        16 9
+    ),
+    "4by3": (
+        4 3
+    ),
+    "3by4": (
+        3 4
+    ),
+    "1by1": (
+        1 1
+    )
+);
+
+.o-flex-media {
+    position: relative;
+    display: block;
+    min-width: 100%;
+    overflow: hidden;
+
+    &--flex {
+        flex: 1;
+    }
+
+    /**
+    * A pseudo-element shunt is used to provide support for `max-height`. The
+    * `max-height` property has no affect when using a percentage-padding to set
+    * the aspect ratio.
+    */
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+    }
+
+    @each $class, $ratio in $ratios {
+        /**
+        * Modifier: #{$class} aspect ratio
+        */
+
+        &--#{$class} {
+            &::before {
+                @include ratio($ratio);
+            }
+        }
+    }
+
+    /**
+    * Descendant: media element
+    *
+    * Utility of the component is improved by providing an explicit descendant
+    * class. However, it will work automatically for iframes, embeds, and objects
+    * to account for times when you cannot modify the attributes for 3rd party
+    * widget code.
+    */
+
+    /* postcss-bem-linter: ignore */
+    &__item,
+    iframe,
+    embed,
+    object {
+        @include _position(absolute, 0, null, 0, 0, null);
+        width: 100%;
+    }
+}

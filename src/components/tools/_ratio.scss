@@ -1,0 +1,30 @@
+///*----------------------------------*\
+//  #ASPECT RATIO
+//\*----------------------------------*/
+//
+//  mixin for a responsive box that maintains an aspect ratio.
+//  https://gist.github.com/brianmcallister/2932463
+//
+//\*----------------------------------*/
+
+// Usage:
+//
+//  See objects/flex-media fo example usage
+//
+// 		.element {
+// 			&::before {
+//				@include ratio(16 9);
+// 			}
+// 		}
+
+@mixin ratio($ratio: 1 1) {
+    //  $ratio - Ratio the element needs to maintain e.g. 16:9 = (16 9).
+
+    @if length($ratio) < 2 or length($ratio) > 2 {
+        @warn "$ratio must be a list with two values.";
+    }
+
+    $height: (nth($ratio, 2) / nth($ratio, 1)) * 100%;
+
+    padding-bottom: $height;
+}

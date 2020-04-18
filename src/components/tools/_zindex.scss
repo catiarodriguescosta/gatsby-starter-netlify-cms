@@ -1,0 +1,19 @@
+///*----------------------------------*\
+//  #Z-INDEX
+//\*----------------------------------*/
+//
+//  Mixin to streamline the mapping of your z-index
+//  Takes the index of your key and applies this as your z-index value
+//  Is applied in settings/zindex
+//
+//\*----------------------------------*/
+
+@mixin z-index($key) {
+    $index: index($z-index, $key);
+
+    @if (type_of($index) != number) {
+        @error "Cannot find #{$key} in z-index map.";
+    }
+
+    z-index: $index;
+}
