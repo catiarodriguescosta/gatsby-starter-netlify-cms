@@ -2,12 +2,32 @@
 templateKey: blog-post
 title: Making sense of the SCAA’s new Flavor Wheel
 date: 2016-12-17T15:04:10.000Z
+description: The Coffee Taster’s Flavor Wheel, the official resource used by
+  coffee tasters, has been revised for the first time this year.
 featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
 tags:
   - flavor
   - tasting
+meal_type:
+  - Main
+syn_classification: Free
+Ingredients: |-
+  20gr acucar
+
+  kfsdf,
+Procedure: |-
+  1. erfdgdm,f
+
+  2. fjgfm,
+servings: 4
+total_syns: "20"
+total_hea: "1"
+total_heb: "1"
+serving_syns: "5"
+serving_hea: "1"
+serving_heb: "1"
+time: 20m
 ---
 ![flavor wheel](/img/flavor_wheel.jpg)
 
