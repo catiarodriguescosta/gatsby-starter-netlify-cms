@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import NavbarLinks from "./NavLinks"
+import { Link } from "gatsby"
 import styled from 'styled-components'
 
 
@@ -98,7 +99,10 @@ const Navbar = () => {
 
   return (
     <Navigation>
-      <Logo >a few syns a day...</Logo>
+      <Link to="/">
+        <Logo >a few syns a day...</Logo>
+      </Link>
+
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
