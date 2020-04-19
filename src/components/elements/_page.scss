@@ -26,3 +26,8 @@ body {
     @include font-size($base-font-size, $base-line-height);
     -webkit-font-smoothing: antialiased;
 }
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}

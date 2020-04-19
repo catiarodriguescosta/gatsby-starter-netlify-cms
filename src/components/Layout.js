@@ -5,6 +5,28 @@ import Navbar from '../components/Navbar'
 import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import { createGlobalStyle} from "styled-components"
+
+const GlobalStyle = createGlobalStyle`
+  :root {
+    --header-bg-color: #001a2d;
+  }
+  
+  $mq-mob: 480px;
+  $mq-mob--sml: 375px;
+  $mq-mob--med: 560px;
+  $mq-mob--lrg: 640px;
+
+  $mq-tab: 768px;
+  $mq-tab--sml: 765px;
+  $mq-tab--lrg: 820px;
+
+  $mq-desk: 960px;
+  $mq-desk--med: 1024px;
+  $mq-desk--lrg: 1120px;
+  $mq-desk--xlrg: 1400px;
+
+`
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()

@@ -18,8 +18,8 @@ const BlogPost = styled.article`
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 31%;
-  margin: 1%;
+  width: 100%;
+  margin-bottom: 20px;
   box-shadow: 0 0 5px #d5d5d5;
   transition: 0.25s;
   &:hover{
@@ -27,6 +27,16 @@ const BlogPost = styled.article`
   }
   a {
     color: #333;
+  }
+
+  @media(min-width: 768px) {
+    width: 48%;
+    margin: 1%;
+  }
+
+  @media(min-width: 960px) {
+    width: 31%;
+    margin: 1%;
   }
 
 `
@@ -95,10 +105,13 @@ class BlogRoll extends React.Component {
                   </header>
 
                   <BlogPostData>
-                        <BlogPostClassification>
-                          {post.frontmatter.classification}
-                        </BlogPostClassification>
-                        { (post.frontmatter.classification === "free" || post.frontmatter.classification === "" )  ? null : (
+                        
+                        <b>{post.frontmatter.serving_syns}</b>
+                        <span> syn (s) <em>per serving</em> &nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+                        <b>{post.frontmatter.total_syns}</b>
+                        <span> syn (s) <em>per total</em></span>
+
+                        {/* { (post.frontmatter.classification === "free" || post.frontmatter.classification === "" )  ? null : (
                           <span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
                          )}
                         {post.frontmatter.classification === "free" ? null : (
@@ -108,7 +121,7 @@ class BlogRoll extends React.Component {
                         {post.frontmatter.classification === "free" ? null : (
                           post.frontmatter.total_syns,
                           <span>syn (s) <em>per total</em></span>
-                        )}
+                        )} */}
                   </BlogPostData>
                 
               </BlogPost>
@@ -147,7 +160,6 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 serving_syns
-                classification
                 total_syns
                 featuredimage {
                   childImageSharp {
