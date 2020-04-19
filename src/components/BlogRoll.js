@@ -96,16 +96,16 @@ class BlogRoll extends React.Component {
 
                   <BlogPostData>
                         <BlogPostClassification>
-                          {post.frontmatter.syn_classification}
+                          {post.frontmatter.classification}
                         </BlogPostClassification>
-                        { (post.frontmatter.syn_classification === "free" || post.frontmatter.syn_classification === "" )  ? null : (
+                        { (post.frontmatter.classification === "free" || post.frontmatter.classification === "" )  ? null : (
                           <span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
                          )}
-                        {post.frontmatter.syn_classification === "free" ? null : (
+                        {post.frontmatter.classification === "free" ? null : (
                           post.frontmatter.serving_syns,
                           <span>syn (s) <em>per serving</em> &nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
                         )}
-                        {post.frontmatter.syn_classification === "free" ? null : (
+                        {post.frontmatter.classification === "free" ? null : (
                           post.frontmatter.total_syns,
                           <span>syn (s) <em>per total</em></span>
                         )}
@@ -146,9 +146,8 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                syn_classification
                 serving_syns
+                classification
                 total_syns
                 featuredimage {
                   childImageSharp {
