@@ -1,7 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-//import logo from '../img/logo.svg'
+import React, { useState } from "react"
+import NavbarLinks from "./NavLinks"
 import styled from 'styled-components'
 
 
@@ -9,100 +7,115 @@ const Logo = styled.h1`
   font-family: "pacifico";
   font-size: 30px;
 `
-
-const NavbarDiv = styled.div`
-  font-family: "Barlow Semi Condensed", sans-serif;
+const Navigation = styled.nav`
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  justify-content: space-between;
   text-transform: uppercase;
-  font-size: 20px;
-  
+  margin: 0 auto;
+  padding: 0 5vw;
+  z-index: 2;
+  align-self: center;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+  }
+`
+
+const Toggle = styled.div`
+  display: none;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 10px;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`
+
+const Navbox = styled.div`
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 10vh;
+    background-color: #fff;
+    transition: all 0.3s ease-in;
+    top: 9vh;
+    left: ${props => (props.open ? "-100%" : "0")};
+  }
+`
+
+const Hamburger = styled.div`
+  background-color: #111;
+  width: 30px;
+  height: 3px;
+  transition: all .3s linear;
+  align-self: center;
+  position: relative;
+  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
+  ::before,
+  ::after {
+    width: 30px;
+    height: 3px;
+    background-color: #111;
+    content: "";
+    position: absolute;
+    transition: all 0.3s linear;
+  }
+
+  ::before {
+    transform: ${props =>
+      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    top: -10px;
+  }
+
+  ::after {
+    opacity: ${props => (props.open ? "0" : "1")};
+    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    top: 10px;
+  }
 `
 
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
+const Navbar = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false)
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
-
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
+  return (
+    <Navigation>
+      <Logo >a few syns a day...</Logo>
+      <Toggle
+        navbarOpen={navbarOpen}
+        onClick={() => setNavbarOpen(!navbarOpen)}
       >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <Logo class="logo white">a few syns a day...</Logo>
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <NavbarDiv className="navbar-end has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/recipes">
-                Recipes
-              </Link>
-              <Link className="navbar-item" to="/tips">
-                Tips
-              </Link>
-              <Link className="navbar-item" to="/Slimming-world">
-                Slimming World
-              </Link>
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </NavbarDiv>
-          </div>
-        </div>
-      </nav>
-    )
-  }
+        {navbarOpen ? <Hamburger open /> : <Hamburger />}
+      </Toggle>
+      {navbarOpen ? (
+        <Navbox>
+          <NavbarLinks />
+        </Navbox>
+      ) : (
+        <Navbox open>
+          <NavbarLinks />
+        </Navbox>
+      )}
+    </Navigation>
+  )
 }
 
 export default Navbar
