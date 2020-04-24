@@ -5,25 +5,27 @@ date: 2017-01-04T15:04:10.000Z
 description: Brewing with a Chemex probably seems like a complicated,
   time-consuming ordeal, but once you get used to the process, it becomes a
   soothing ritual that's worth the effort every time.
-featuredpost: false
 featuredimage: /img/chemex.jpg
-tags:
-  - brewing
-  - chemex
 meal_type:
   - Appettizer
-syn_classification:
-  - VeryLowSyn
+syn_category: free
 Ingredients: hgdsfndmg d
 Procedure: vcbkldfmv
+difficulty: 1
 servings: 2
+time: 20m
 total_syns: "20"
 total_hea: "1"
 total_heb: "1"
+featuredpost: false
 serving_syns: "1"
 serving_hea: "1"
 serving_heb: "1"
-time: 20m
+tags:
+  - brewing
+  - chemex
+syn_classification:
+  - VeryLowSyn
 ---
 ![chemex](/img/chemex.jpg)
 
