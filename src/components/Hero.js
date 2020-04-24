@@ -3,6 +3,8 @@ import React from "react"
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import HeroImg from '../img/hero.jpg'
+//import RecipeImages from '../../static/img/coffee-gear.png'
+
 
 
 const HeroDiv = styled.div`
@@ -36,8 +38,8 @@ const HeroLogo = styled.div`
     color: white;
 `
 
-const Hero= ({ Heading,  SubHeading}) => (
-      <HeroDiv>
+const Hero= ({ imgSrc, Heading,  SubHeading}) => (
+    <HeroDiv>
         <HeroContent>
             <HeroLogo>
                 {Heading}
@@ -46,10 +48,11 @@ const Hero= ({ Heading,  SubHeading}) => (
                 {SubHeading}
             </HeroHeadline>
         </HeroContent>
-      </HeroDiv>
+    </HeroDiv>
 )
 
 Hero.propTypes = {
+    srcImg: PropTypes.string,
     Heading: PropTypes.string,
     SubHeading: PropTypes.string, 
 }

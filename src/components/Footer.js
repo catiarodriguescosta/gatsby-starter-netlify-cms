@@ -2,11 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from "styled-components"
 
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-// import logo from '../img/logo.svg'
-// import twitter from '../img/social/twitter.svg'
-// import vimeo from '../img/social/vimeo.svg'
+import facebook from '../img/icons/social/facebook.svg'
+import instagram from '../img/icons/social/instagram.svg'
+import reactlogo from '../img/icons/logo-react.svg'
 
 
 const FooterDiv = styled.footer`
@@ -71,7 +69,13 @@ const Footer = class extends React.Component {
 
         
         <Copyrights>
-            &copy; 2020, Built by Cátia Costa using React &hearts;
+            &copy; 2020, Built by Cátia Costa using&nbsp;
+            <img
+              src={reactlogo}
+              alt="react logo"
+              style={{ width: '1.2em', height: '1.2em', marginBottom: '-3px' }}
+            />
+            &nbsp;React and &hearts;
         </Copyrights>
         
 

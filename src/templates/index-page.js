@@ -16,6 +16,7 @@ export const IndexPageTemplate = ({
   
   <div>
     <Hero 
+      srcImg="../img/hero.jpg"
       //srcImg={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
       Heading= {title}
       SubHeading= {subheading} 
