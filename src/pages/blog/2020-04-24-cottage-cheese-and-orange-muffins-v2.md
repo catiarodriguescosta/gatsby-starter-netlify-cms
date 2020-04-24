@@ -36,7 +36,7 @@ Procedure: >-
   ***Adapted from this [Jamie’s Oliver](https://www.jamieoliver.com/) recipe.***
 difficulty: 1
 servings: 12
-time: "1"
+time: 3
 total_syns: "2"
 total_hea: "0.5"
 total_heb: "0"
