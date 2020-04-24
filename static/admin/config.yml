@@ -61,7 +61,7 @@ collections:
         max: 20
         step: 1
       - label: "Time"
-        name: "time"
+        name: "duration"
         widget: "number"
         default: 1
         valueType: "int"
