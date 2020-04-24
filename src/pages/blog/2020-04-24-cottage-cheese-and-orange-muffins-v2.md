@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Cottage cheese and Orange Muffins v2
 date: 2020-04-24T16:10:36.329Z
 description: Cottage cheese and Orange Muffins
-featuredimage: /img/sliced-bread-on-saucer-2013804.jpg
+featuredimage: /img/blog-index.jpg
 meal_type:
   - Breakfast
   - Snack
