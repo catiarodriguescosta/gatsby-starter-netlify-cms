@@ -10,26 +10,26 @@ meal_type:
   - Snack
 syn_category: very_low_syns
 Ingredients: |-
-  300 gr fat free natural cottage cheese
+  <p>300 gr fat free natural cottage cheese</p>
 
-  1 orange (zest and juice)
+  <p>1 orange (zest and juice)</p>
 
-  2 tbsp cornflour
+  <p>2 tbsp cornflour</p>
 
-  2 triangles “The Laughting Cow”
+  <p>2 triangles “The Laughting Cow”</p>
 
-  8 — 15 tbsp Stevia
+  <p>8 — 15 tbsp Stevia</p>
 Procedure: >-
-  1. **Heat the oven to 180ºC.**
+  1. Heat the oven to 180ºC.
 
-  2. **Beat all the ingredients together except the orange zest (I used a liquidifier). I recommend to use the 8tbsp of stevia first and then adjust it to your own preference.**
+  2. Beat all the ingredients together except the orange zest (I used a liquidifier). I recommend to use the 8tbsp of stevia first and then adjust it to your own preference.
 
-  3. **Add the orange zest and stir.**
+  3. Add the orange zest and stir.
 
-  4. **Fill the muffins cases and bake them for 40minutes.**
+  4. Fill the muffins cases and bake them for 40minutes.
 
      \
-     **Adapted from this Jamie’s Oliver recipe.**
+     Adapted from this Jamie’s Oliver recipe.
 difficulty: 1
 time: 1
 servings: 12
