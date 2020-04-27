@@ -38,7 +38,7 @@ const HeroLogo = styled.div`
     color: white;
 `
 
-const Hero= ({ imgSrc, Heading,  SubHeading}) => (
+const Hero= ({ Heading,  SubHeading}) => (
     <HeroDiv>
         <HeroContent>
             <HeroLogo>
@@ -52,7 +52,7 @@ const Hero= ({ imgSrc, Heading,  SubHeading}) => (
 )
 
 Hero.propTypes = {
-    srcImg: PropTypes.string,
+    //srcImg: PropTypes.string,
     Heading: PropTypes.string,
     SubHeading: PropTypes.string, 
 }

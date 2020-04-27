@@ -4,7 +4,6 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-//import Hero from '../components/Hero'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
@@ -18,13 +17,27 @@ import hebIcon from '../img/icons/wheat.svg'
 import synsIcon from '../img/icons/lollipop-spiral.svg'
 
 
+const HeroRecipe = styled.section`
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: columns;
+    justify-content: center;
+    align-items: center;
+`
+
+
 const Recipe = styled.section`
   margin-top: -100px;
   @media(min-width: 768px) {
-    margin-top: -300px;
+    margin-top: -200px;
   }
   @media(min-width: 960px) {
-    margin-top: -500px;
+    margin-top: -200px;
   }
 `
 const RecipeWrapper = styled.div`
@@ -60,10 +73,10 @@ const RecipeStatistics = styled.div`
     height: 1.5em;
     width: 1.5em;
     margin-right: -5px;
+  }
 
-    .disabled{
-      opacity: 0.4;
-    }
+  .header-icons.disabled{
+    opacity: 0.4;
   }
 
   .header-icons--serving{
@@ -264,30 +277,14 @@ export const RecipePostTemplate = ({
 
   return (
     <div>
-      {/* <Hero 
-        //srcImg={image}
-        Heading= {title}
-        SubHeading= ""
-      /> */}
-
-{/*     <div className="content">
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
+      
+      <HeroRecipe style={{
             backgroundImage: `url(${
               !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
             })`,
-          }}
-        >test
-        </div>
-      </div> */}
+          }} /> 
 
-      <PreviewCompatibleImage
-        imageInfo={{
-          image: featuredimage,
-          alt: `main image for ${title}'s recipe`,
-        }}
-      />
+
       <Recipe>
         <div className="o-container">
           <RecipeWrapper>
@@ -296,16 +293,15 @@ export const RecipePostTemplate = ({
             </RecipeRow>
             <RecipeRow>
               <RecipeStatistics>
-                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 1  ? null : 'disabled')} alt="Difficulty-1" />   
-                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 2  ? null : 'disabled')} alt="Difficulty-2" />
-                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 3  ? null : 'disabled')} alt="Difficulty-3" />
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 1  ? "" : 'disabled')} alt="Difficulty-1" />   
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 2  ? "" : 'disabled')} alt="Difficulty-2" />
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 3  ? "" : 'disabled')} alt="Difficulty-3" />
                 <div className="header-icons__label">DIFFICULTY</div>
               </RecipeStatistics>
                <RecipeStatistics>
-                {time}
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-1" />
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-2" />
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-3" />
+                <img src={timeIcon} className={"header-icons " + (time >= 1  ? "" : 'disabled')}  alt="Time-1" />
+                <img src={timeIcon} className={"header-icons " + (time >= 2  ? "" : 'disabled')}  alt="Time-2" />
+                <img src={timeIcon} className={"header-icons " + (time >= 3  ? "" : 'disabled')}  alt="Time-3" />
                 <div className="header-icons__label">TIME</div>
               </RecipeStatistics> 
               <RecipeStatistics>
@@ -318,12 +314,12 @@ export const RecipePostTemplate = ({
             </RecipeRow>
             <RecipeInnerDivider />
             <RecipeRow>
+              <PostContent content={content} />
               <RecipeIngredients>
-                <PostContent content={Ingredients} />
                 {Ingredients}
+                <PostContent content={content} />
               </RecipeIngredients>
               <RecipeProcedure>
-                <PostContent content={Procedure} />
                 {Procedure}
               </RecipeProcedure>
             </RecipeRow>
@@ -460,7 +456,7 @@ const RecipePost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         //date={post.frontmatter.date}
-        time={post.frontmatter.duration}
+        time={post.frontmatter.time}
         difficulty ={post.frontmatter.difficulty}
         Ingredients={post.frontmatter.Ingredients}
         Procedure={post.frontmatter.Procedure}
