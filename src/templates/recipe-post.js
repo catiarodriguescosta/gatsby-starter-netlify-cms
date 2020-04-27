@@ -313,13 +313,11 @@ export const RecipePostTemplate = ({
             </RecipeRow>
             <RecipeInnerDivider />
             <RecipeRow>
-              <PostContent content={content} />
               <RecipeIngredients>
                 {Ingredients}
               </RecipeIngredients>
               <RecipeProcedure>
                 <PostContent content={content} />
-   
               </RecipeProcedure>
             </RecipeRow>
             <RecipeRow>
