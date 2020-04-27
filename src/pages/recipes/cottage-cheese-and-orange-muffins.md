@@ -19,6 +19,15 @@ Ingredients: |-
   2 triangles “The Laughting Cow”
 
   8 — 15 tbsp Stevia
+difficulty: 1
+time: 1
+servings: 12
+total_syns: "2"
+total_hea: "0.5"
+total_heb: "0"
+serving_syns: 1 / 6
+serving_hea: < 0.1
+serving_heb: "0"
 Procedure: >-
   1. Heat the oven to 180ºC.
 
@@ -30,16 +39,11 @@ Procedure: >-
 
      \
      Adapted from this Jamie’s Oliver recipe.
-difficulty: 1
-time: 1
-servings: 12
-total_syns: "2"
-total_hea: "0.5"
-total_heb: "0"
-serving_syns: 1 / 6
-serving_hea: < 0.1
-serving_heb: "0"
 tags:
   - cottage cheese
   - orange
 ---
+1. **Heat the oven to 180ºC.**
+2. **Beat all the ingredients together except the orange zest (I used a liquidifier). I recommend to use the 8tbsp of stevia first and then adjust it to your own preference.**
+3. **Add the orange zest and stir.**
+4. **Fill the muffins cases and bake them for 40minutes.**
