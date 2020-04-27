@@ -10,15 +10,15 @@ meal_type:
   - Snack
 syn_category: very_low_syns
 Ingredients: |-
-  `<p>300 gr fat free natural cottage cheese</p>`
+  300 gr fat free natural cottage cheese
 
-  `<p>1 orange (zest and juice)</p>`
+  1 orange (zest and juice)
 
-  `<p>2 tbsp cornflour</p>`
+  2 tbsp cornflour
 
-  `<p>2 triangles “The Laughting Cow”</p>`
+  2 triangles “The Laughting Cow”
 
-  `<p>8 — 15 tbsp Stevia</p>`
+  8 — 15 tbsp Stevia
 Procedure: >-
   1. Heat the oven to 180ºC.
 
