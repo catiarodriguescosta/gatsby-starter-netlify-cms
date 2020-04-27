@@ -19,15 +19,25 @@ import synsIcon from '../img/icons/lollipop-spiral.svg'
 
 
 const Recipe = styled.section`
-  margin-top: -500px;
+  margin-top: -100px;
+  @media(min-width: 768px) {
+    margin-top: -300px;
+  }
+  @media(min-width: 960px) {
+    margin-top: -500px;
+  }
 `
 const RecipeWrapper = styled.div`
   background: #FCF9EE;
-  padding: 50px;  
+  padding: 15px 25px;  
+  @media(min-width: 768px) {
+    padding: 50px;  
+  }
 `
 const RecipeRow = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 20px 0;
 `
 const RecipeTitle = styled.h2`
@@ -79,14 +89,36 @@ const RecipeInnerDivider = styled.hr`
   border-top: 5px double #000;
 `
 const RecipeIngredients = styled.div`
-  width: 33%;
+  width: 100%;
   font-family: "Barlow Semi Condensed";
   font-weight: 600;
+  padding-bottom: 10px;
+
+  @media(min-width: 768px) {
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  @media(min-width: 960px) {
+    width: 30%;
+    margin-right: 3%;
+  }
+  
 `
 const RecipeProcedure = styled.div`
-  width: 66%;
+  width: 100%;
   font-family: "Barlow Semi Condensed";
   font-weight: 400;
+
+  @media(min-width: 768px) {
+    width: 49%;
+    margin-left: 1%;
+  }
+
+  @media(min-width: 960px) {
+    width: 65%;
+    margin-left: 1%;
+  }
 
   ol {
     list-style: none;
@@ -104,13 +136,23 @@ const RecipeProcedure = styled.div`
   }
 `
 const RecipeTable = styled.div`
-  width: 33%;
+  width: 100%;
   height: 100%;
   font-family: "Barlow Semi Condensed";
   font-weight: 600;
   font-size: 16px; 
   border: 1px solid;
   text-align: center;
+
+  @media(min-width: 768px) {
+    width: 47%;
+    margin-right: 3%;
+  }
+
+  @media(min-width: 960px) {
+    width: 30%;
+    margin-right: 3%;
+  }
 
   header {
     font-size: 12px; 
@@ -148,15 +190,51 @@ const RecipeTable = styled.div`
 
 `
 const RecipeExtraInfo = styled.div`
-  width: 66%;
+  font-family: "Barlow Semi Condensed";
+  font-weight: 400;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @media(min-width: 768px) {
+    width: 48%;
+    margin-left: 1%;
+  }
+
+  @media(min-width: 960px) {
+    width: 65%;
+    margin-left: 1%;
+  }
+
+  ul {
+    list-style: square inside;
+    padding-inline-start: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
 `
 const RecipeTags = styled.div`
-  width: 33%;
+  width: 100%;
+  @media(min-width: 768px) {
+    width: 49%;
+    margin-right: 1%;
+  }
+  @media(min-width: 960px) {
+    width: 32%;
+    margin-right: 1%;
+  }
 `
 const RecipeMealType = styled.div`
-  width: 33%;
+  width: 100%;
+  @media(min-width: 768px) {
+    width: 49%;
+    margin-left: 1%;
+  }
+  @media(min-width: 960px) {
+    width: 32%;
+    margin-left: 1%;
+  }
 `
 
 
@@ -167,8 +245,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  date,
-  time,
+  difficulty,
   Ingredients,
   Procedure,
   meal_type,
@@ -179,7 +256,7 @@ export const BlogPostTemplate = ({
   total_hea,
   total_heb,
   total_syns,
-  featuredimage
+  featuredimage,
 
 }) => {
   const PostContent = contentComponent || Content
@@ -191,6 +268,18 @@ export const BlogPostTemplate = ({
         Heading= {title}
         SubHeading= ""
       /> */}
+
+{/*     <div className="content">
+        <div
+          className="full-width-image-container margin-top-0"
+          style={{
+            backgroundImage: `url(${
+              !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
+            })`,
+          }}
+        >test
+        </div>
+      </div> */}
 
       <PreviewCompatibleImage
         imageInfo={{
@@ -206,17 +295,17 @@ export const BlogPostTemplate = ({
             </RecipeRow>
             <RecipeRow>
               <RecipeStatistics>
-                <img src={difficultyIcon} className={"header-icons " + (time >= 1  ? 'enabled' : 'disabled')} alt="Difficulty-1" />   
-                <img src={difficultyIcon} className={"header-icons " + (time >= 2  ? 'enabled' : 'disabled')} alt="Difficulty-2" />
-                <img src={difficultyIcon} className={"header-icons " + (time >= 3  ? 'enabled' : 'disabled')} alt="Difficulty-3" />
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 1  ? null : 'disabled')} alt="Difficulty-1" />   
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 2  ? null : 'disabled')} alt="Difficulty-2" />
+                <img src={difficultyIcon} className={"header-icons " + (difficulty >= 3  ? null : 'disabled')} alt="Difficulty-3" />
                 <div className="header-icons__label">DIFFICULTY</div>
               </RecipeStatistics>
-              <RecipeStatistics>
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? 'enabled' : 'disabled')}  alt="Time-1" />
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? 'enabled' : 'disabled')}  alt="Time-2" />
-                <img src={timeIcon} className={"header-icons " + (time >= 1  ? 'enabled' : 'disabled')}  alt="Time-3" />
+{/*               <RecipeStatistics>
+                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-1" />
+                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-2" />
+                <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-3" />
                 <div className="header-icons__label">TIME</div>
-              </RecipeStatistics>
+              </RecipeStatistics> */}
               <RecipeStatistics>
                 <div className="header-icons__wrapper">
                   <img src={servingIcon} className="header-icons--serving" alt="Servings"/>
@@ -228,9 +317,11 @@ export const BlogPostTemplate = ({
             <RecipeInnerDivider />
             <RecipeRow>
               <RecipeIngredients>
+                <PostContent content={Ingredients} />
                 {Ingredients}
               </RecipeIngredients>
               <RecipeProcedure>
+                <PostContent content={Procedure} />
                 {Procedure}
               </RecipeProcedure>
             </RecipeRow>
@@ -272,7 +363,7 @@ export const BlogPostTemplate = ({
                 <RecipeTags>
                   {tags && tags.length ? (
                     <div>
-                      <h5>Tags</h5>
+                      <h6>Tags</h6>
                       <ul className="taglist">
                         {tags.map(tag => (
                           <li key={tag + `tag`}>
@@ -286,8 +377,8 @@ export const BlogPostTemplate = ({
                 <RecipeMealType>
                   {meal_type && meal_type.length ? (
                     <div>
-                      <h5>Meal Type</h5>
-                      <ul className="taglist">
+                      <h6>Meal Type</h6>
+                      <ul>
                         {meal_type.map(type => (
                           <li key={type + `tag`}>
                             <Link to={`/recipes/${kebabCase(type)}/`}>{type}</Link>
@@ -366,8 +457,9 @@ const BlogPost = ({ data }) => {
         featuredimage={post.frontmatter.featuredimage}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        date={post.frontmatter.date}
-        time={post.frontmatter.time}
+        //date={post.frontmatter.date}
+        //time={post.frontmatter.duration}
+        difficulty ={post.frontmatter.difficulty}
         Ingredients={post.frontmatter.Ingredients}
         Procedure={post.frontmatter.Procedure}
         meal_type={post.frontmatter.meal_type}
@@ -399,16 +491,15 @@ export const pageQuery = graphql`
       html
       frontmatter {
         description
-        date(formatString: "MMMM DD, YYYY")
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 2000, quality: 100) {
+            fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         title
-        time
+        difficulty
         Ingredients
         Procedure
         tags
