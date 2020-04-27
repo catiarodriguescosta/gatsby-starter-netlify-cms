@@ -10,13 +10,13 @@ meal_type:
   - Snack
 syn_category: very_low_syns
 Ingredients: |-
-  300 gr fat free natural cottage cheese
+  300 gr fat free natural cottage cheese\n
 
-  1 orange (zest and juice)
+  1 orange (zest and juice)\n
 
-  2 tbsp cornflour
+  2 tbsp cornflour  
 
-  2 triangles “The Laughting Cow”
+  2 triangles “The Laughting Cow”\
 
   8 — 15 tbsp Stevia
 difficulty: 1
