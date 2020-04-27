@@ -261,7 +261,6 @@ export const RecipePostTemplate = ({
   difficulty,
   time, 
   Ingredients,
-  Procedure,
   meal_type,
   servings,
   serving_hea,
@@ -317,10 +316,10 @@ export const RecipePostTemplate = ({
               <PostContent content={content} />
               <RecipeIngredients>
                 {Ingredients}
-                <PostContent content={content} />
               </RecipeIngredients>
               <RecipeProcedure>
-                {Procedure}
+                <PostContent content={content} />
+   
               </RecipeProcedure>
             </RecipeRow>
             <RecipeRow>
@@ -459,7 +458,7 @@ const RecipePost = ({ data }) => {
         time={post.frontmatter.time}
         difficulty ={post.frontmatter.difficulty}
         Ingredients={post.frontmatter.Ingredients}
-        Procedure={post.frontmatter.Procedure}
+        //Procedure={post.frontmatter.Procedure}
         meal_type={post.frontmatter.meal_type}
         servings={post.frontmatter.servings}
         serving_hea={post.frontmatter.serving_hea}
@@ -500,7 +499,6 @@ export const pageQuery = graphql`
         difficulty
         time
         Ingredients
-        Procedure
         tags
         meal_type
         servings
