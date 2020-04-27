@@ -246,6 +246,7 @@ export const RecipePostTemplate = ({
   title,
   helmet,
   difficulty,
+  time, 
   Ingredients,
   Procedure,
   meal_type,
@@ -300,12 +301,13 @@ export const RecipePostTemplate = ({
                 <img src={difficultyIcon} className={"header-icons " + (difficulty >= 3  ? null : 'disabled')} alt="Difficulty-3" />
                 <div className="header-icons__label">DIFFICULTY</div>
               </RecipeStatistics>
-{/*               <RecipeStatistics>
+               <RecipeStatistics>
+                {time}
                 <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-1" />
                 <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-2" />
                 <img src={timeIcon} className={"header-icons " + (time >= 1  ? null : 'disabled')}  alt="Time-3" />
                 <div className="header-icons__label">TIME</div>
-              </RecipeStatistics> */}
+              </RecipeStatistics> 
               <RecipeStatistics>
                 <div className="header-icons__wrapper">
                   <img src={servingIcon} className="header-icons--serving" alt="Servings"/>
@@ -458,7 +460,7 @@ const RecipePost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         //date={post.frontmatter.date}
-        //time={post.frontmatter.duration}
+        time={post.frontmatter.duration}
         difficulty ={post.frontmatter.difficulty}
         Ingredients={post.frontmatter.Ingredients}
         Procedure={post.frontmatter.Procedure}
@@ -500,6 +502,7 @@ export const pageQuery = graphql`
         }
         title
         difficulty
+        time
         Ingredients
         Procedure
         tags
