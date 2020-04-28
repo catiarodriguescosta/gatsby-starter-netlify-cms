@@ -61,7 +61,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Meal type", name: "meal_type", widget: "select", multiple: true, options: [{ label: "Breakfast", value: "Breakfast" }, { label: "Appettizer", value: "Appettizer" }, { label: "Main Meal", value: "Main" }, { label: "Dessert", value: "Dessert" }, { label: "Snack", value: "Snack" }]}
       - {label: "Syn Category", name: "syn_category", widget: "select", options: [ { label: "Free", value: "free" }, { label: "Very Low Syns", value: "very_low_syns" }, { label: "Low Syns", value: "low_syns" }, { label: "No Category", value: "none" }] }
-      - {label: "Ingredients", name: "IngredientsList", widget: "list"}
+      - {label: "Ingredients", name: "list_of_ingredients", widget: "list"}
       - {label: "Procedure", name: "body",  widget: "markdown"}
       - {label: "Difficulty", name: "difficulty", widget: "number", default: 1, valueType: "int", min: 1, max: 3, step: 1 }
       - {label: "Time", name: "time", widget: "number", default: 1, valueType: "int", min: 1, max: 3, step: 1 }
@@ -73,3 +73,7 @@ collections:
       - {label: "HE A by serving", name: "serving_hea", widget: "string"}
       - {label: "HE B by serving", name: "serving_heb", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        field: {label: Image, name: image, widget: image}
