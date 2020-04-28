@@ -260,7 +260,7 @@ export const RecipePostTemplate = ({
   helmet,
   difficulty,
   time, 
-  Ingredients,
+  IngredientsList,
   meal_type,
   servings,
   serving_hea,
@@ -314,7 +314,7 @@ export const RecipePostTemplate = ({
             <RecipeInnerDivider />
             <RecipeRow>
               <RecipeIngredients>
-                {Ingredients}
+                {IngredientsList}
               </RecipeIngredients>
               <RecipeProcedure>
                 <PostContent content={content} />
@@ -455,7 +455,7 @@ const RecipePost = ({ data }) => {
         //date={post.frontmatter.date}
         time={post.frontmatter.time}
         difficulty ={post.frontmatter.difficulty}
-        Ingredients={post.frontmatter.Ingredients}
+        IngredientsList={post.frontmatter.IngredientsList}
         //Procedure={post.frontmatter.Procedure}
         meal_type={post.frontmatter.meal_type}
         servings={post.frontmatter.servings}
@@ -496,7 +496,7 @@ export const pageQuery = graphql`
         title
         difficulty
         time
-        Ingredients
+        IngredientsList
         tags
         meal_type
         servings
