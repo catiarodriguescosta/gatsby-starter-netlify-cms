@@ -64,7 +64,9 @@ collections:
       - label: "Ingredients"
         name: "list_of_ingredients"
         widget: "list"
-        field: {label: "Ingredient", name: "ingredient", widget: "string"}
+        fields: 
+          - {label: "Ingredient", name: "ingredient", widget: "string"}
+          - {label: "Syns", name: "syns", widget: "string"}
       - {label: "Procedure", name: "body",  widget: "markdown"}
       - {label: "Difficulty", name: "difficulty", widget: "number", default: 1, valueType: "int", min: 1, max: 3, step: 1 }
       - {label: "Time", name: "time", widget: "number", default: 1, valueType: "int", min: 1, max: 3, step: 1 }
