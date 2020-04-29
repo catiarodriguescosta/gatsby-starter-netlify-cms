@@ -1,14 +1,4 @@
 ---
-templateKey: recipe-post
-title: Cottage cheese and Orange Muffins
-date: 2020-04-27T01:34:33.423Z
-description: Cottage cheese and Orange Muffins
-featuredimage: /img/sliced-bread-on-saucer-2013804.jpg
-meal_type:
-  - Breakfast
-  - Dessert
-  - Snack
-syn_category: very_low_syns
 Ingredients: |-
   300 gr fat free natural cottage cheese
 
@@ -19,13 +9,25 @@ Ingredients: |-
   2 triangles “The Laughting Cow”
 
   8 — 15 tbsp Stevia
+templateKey: recipe-post
+title: Cottage cheese and Orange Muffins
+date: 2020-04-27T01:34:33.423Z
+description: Cottage cheese and Orange Muffins
+featuredimage: /img/sliced-bread-on-saucer-2013804.jpg
+meal_type:
+  - Breakfast
+  - Dessert
+  - Snack
+syn_category: very_low_syns
+list_of_ingredients:
+  - 200 ml milk
+  - 4 eggs
 difficulty: 1
 time: 1
 servings: 12
 total_syns: "2"
 total_hea: "0.5"
 total_heb: "0"
-serving_syns: 1 / 6
 serving_hea: < 0.1
 serving_heb: "0"
 Procedure: >-
@@ -39,6 +41,7 @@ Procedure: >-
 
      \
      **Adapted from this Jamie’s Oliver recipe.**
+serving_syns: 1 / 6
 tags:
   - cottage cheese
   - orange
