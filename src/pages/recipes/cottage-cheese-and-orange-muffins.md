@@ -28,8 +28,15 @@ servings: 12
 total_syns: "2"
 total_hea: "0.5"
 total_heb: "0"
+serving_syns: 1 / 6
 serving_hea: < 0.1
 serving_heb: "0"
+tags:
+  - cottage cheese
+  - orange
+galleryImages:
+  - /img/blog-index.jpg
+  - /img/products-grid1.jpg
 Procedure: >-
   1. **Heat the oven to 180ºC.**
 
@@ -41,10 +48,6 @@ Procedure: >-
 
      \
      **Adapted from this Jamie’s Oliver recipe.**
-serving_syns: 1 / 6
-tags:
-  - cottage cheese
-  - orange
 ---
 1. test
 2. line 2
