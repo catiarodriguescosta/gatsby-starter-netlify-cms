@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: recipe-post
 title: Cottage cheese and Orange Muffins
 date: 2020-04-28T15:19:00.137Z
 description: Cottage cheese and Orange Muffins
