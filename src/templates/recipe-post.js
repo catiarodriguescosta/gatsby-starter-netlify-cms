@@ -100,6 +100,7 @@ const RecipeStatistics = styled.div`
 const RecipeInnerDivider = styled.hr`
   background-color: #FCF9EE;
   border-top: 5px double #000;
+  margin-bottom: 50px;
 `
 const RecipeIngredients = styled.div`
   width: 100%;
@@ -117,11 +118,16 @@ const RecipeIngredients = styled.div`
     margin-right: 3%;
   }
 
+  p {
+    margin: 0
+  }
+
 `
 const RecipeProcedure = styled.div`
   width: 100%;
   font-family: "Barlow Semi Condensed";
   font-weight: 400;
+  padding-bottom: 20px;
 
   @media(min-width: 768px) {
     width: 49%;
@@ -133,13 +139,20 @@ const RecipeProcedure = styled.div`
     margin-left: 1%;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   ol {
-    list-style: none;
+    list-style: none outside;
     counter-reset: procedure-counter;
+    padding-inline-start: 0px;
+    margin-block-start: 0px;
   }
 
   ol li {
     counter-increment: procedure-counter;
+    padding-bottom: 10px;
   }
 
   ol li::before {
@@ -228,6 +241,11 @@ const RecipeExtraInfo = styled.div`
   }
 `
 const RecipeTags = styled.div`
+  h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
   width: 100%;
   @media(min-width: 768px) {
     width: 49%;
@@ -236,9 +254,24 @@ const RecipeTags = styled.div`
   @media(min-width: 960px) {
     width: 32%;
     margin-right: 1%;
+  }
+
+  ul {
+    list-style: none;
+  }
+  ul li::before {
+    content: "#";
+  }
+  ul li a {
+    text-decoration: underline;
   }
 `
 const RecipeMealType = styled.div`
+  h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
   width: 100%;
   @media(min-width: 768px) {
     width: 49%;
@@ -247,6 +280,12 @@ const RecipeMealType = styled.div`
   @media(min-width: 960px) {
     width: 32%;
     margin-left: 1%;
+  }
+  ul {
+    list-style: none;
+  }
+  ul li a {
+    text-decoration: underline;
   }
 `
 
@@ -313,7 +352,9 @@ export const RecipePostTemplate = ({
             <RecipeInnerDivider />
             <RecipeRow>
               <RecipeIngredients>
-                {IngredientsList}
+                {IngredientsList.map(ingredient => (
+                  <p>{ingredient}</p>
+                ))}
               </RecipeIngredients>
               <RecipeProcedure>
                 <PostContent content={content} />
@@ -358,7 +399,7 @@ export const RecipePostTemplate = ({
                   {tags && tags.length ? (
                     <div>
                       <h6>Tags</h6>
-                      <ul className="taglist">
+                      <ul>
                         {tags.map(tag => (
                           <li key={tag + `tag`}>
                             <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
