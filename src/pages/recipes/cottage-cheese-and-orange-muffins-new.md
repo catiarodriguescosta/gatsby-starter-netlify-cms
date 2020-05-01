@@ -1,9 +1,9 @@
 ---
 templateKey: recipe-post
-title: Cottage cheese and Orange Muffins
+title: Cottage cheese and Orange Muffins NEW
 date: 2020-04-29T17:46:30.248Z
 description: Cottage cheese and Orange Muffins
-featuredimage: /img/products-grid2.jpg
+featuredimage: /img/products-grid3.jpg
 meal_type:
   - Dessert
   - Snack
