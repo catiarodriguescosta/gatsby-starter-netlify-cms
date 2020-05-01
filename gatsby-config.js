@@ -1,8 +1,11 @@
+const siteUrl = process.env.URL || process.env.DEPLOY_URL || `https://afewsynsaday.netlify.app`
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'a few syns a day...',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'This website contains recipes and tips to be on track of your weight loss and having a healthy lifestyle with some place for a few syns.',
+    keywords: 'healthy recipes, slimming world recipes, synns, weight loss',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

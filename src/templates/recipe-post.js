@@ -260,7 +260,7 @@ export const RecipePostTemplate = ({
   helmet,
   difficulty,
   time, 
-  //IngredientsList,
+  IngredientsList,
   meal_type,
   servings,
   serving_hea,
@@ -276,8 +276,7 @@ export const RecipePostTemplate = ({
 
   return (
     <div>
-      
-      <HeroRecipe style={{
+    <HeroRecipe style={{
             backgroundImage: `url(${
               !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
             })`,
@@ -314,7 +313,7 @@ export const RecipePostTemplate = ({
             <RecipeInnerDivider />
             <RecipeRow>
               <RecipeIngredients>
-                {/* {IngredientsList} */}
+                {IngredientsList}
               </RecipeIngredients>
               <RecipeProcedure>
                 <PostContent content={content} />
@@ -455,7 +454,7 @@ const RecipePost = ({ data }) => {
         //date={post.frontmatter.date}
         time={post.frontmatter.time}
         difficulty ={post.frontmatter.difficulty}
-        //IngredientsList={post.frontmatter.list_of_ingredients}
+        IngredientsList={post.frontmatter.list_of_ingredients}
         //Procedure={post.frontmatter.Procedure}
         meal_type={post.frontmatter.meal_type}
         servings={post.frontmatter.servings}
@@ -505,6 +504,7 @@ export const pageQuery = graphql`
         total_hea
         total_heb
         total_syns
+        list_of_ingredients
         
       }
     }
