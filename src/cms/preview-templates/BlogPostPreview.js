@@ -10,6 +10,18 @@ const RecipePostPreview = ({ entry, widgetFor }) => {
       description={entry.getIn(['data', 'description'])}
       tags={tags && tags.toJS()}
       title={entry.getIn(['data', 'title'])}
+      difficulty = {entry.getIn(['data', 'difficulty'])}
+      time = {entry.getIn(['data', 'time'])} 
+      IngredientsList = {entry.getIn(['data', 'list_of_ingredients'])} 
+      meal_type = {entry.getIn(['data', 'meal_type'])} 
+      servings = {entry.getIn(['data', 'servings'])} 
+      serving_hea= {entry.getIn(['data', 'serving_hea'])} 
+      serving_heb= {entry.getIn(['data', 'serving_heb'])} 
+      serving_syns= {entry.getIn(['data', 'serving_syns'])} 
+      total_hea= {entry.getIn(['data', 'total_hea'])} 
+      total_heb = {entry.getIn(['data', 'total_heb'])} 
+      total_syns = {entry.getIn(['data', 'total_syns'])} 
+      //featuredimage = 
     />
   )
 }

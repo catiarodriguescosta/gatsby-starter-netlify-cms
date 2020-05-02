@@ -1,24 +1,17 @@
 import React from "react"
-//import { StaticQuery, graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import HeroImg from '../img/hero.jpg'
-//import RecipeImages from '../../static/img/coffee-gear.png'
-
 
 
 const HeroDiv = styled.div`
-    background: url(${HeroImg});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: url('/img/home.jpg') center center / cover fixed;
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: columns;
     justify-content: center;
     align-items: center;
+
 `
 const HeroContent = styled.div`
     display: flex;
@@ -38,8 +31,8 @@ const HeroLogo = styled.div`
     color: white;
 `
 
-const Hero= ({ Heading,  SubHeading}) => (
-    <HeroDiv>
+const Hero= ({ Heading,  SubHeading, ImgSrc}) => (
+    <HeroDiv style ={ { background: (ImgSrc == "" ? "a" : "url("+ImgSrc+") center center / cover  fixed"), minHeight: (ImgSrc == "" ? "70vh" : "50vh") }}>        
         <HeroContent>
             <HeroLogo>
                 {Heading}
@@ -52,13 +45,16 @@ const Hero= ({ Heading,  SubHeading}) => (
 )
 
 Hero.propTypes = {
-    //srcImg: PropTypes.string,
+    Page: PropTypes.string,
     Heading: PropTypes.string,
     SubHeading: PropTypes.string, 
+    ImgSrc: PropTypes.string,
 }
   
 Hero.defaultProps = {
     Heading: ``,
     SubHeading: ``,
+    ImgSrc: ``,
 }
+
 export default Hero;

@@ -16,8 +16,6 @@ export const IndexPageTemplate = ({
   
   <div>
     <Hero 
-      srcImg="../img/hero.jpg"
-      //srcImg={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
       Heading= {title}
       SubHeading= {subheading} 
     />
@@ -33,7 +31,7 @@ export const IndexPageTemplate = ({
         </h3>
         <BlogRoll />
         <div className="c-btn__wrapper">
-          <Link className="c-btn" to="/blog">
+          <Link className="c-btn" to="/recipes">
             Read more
           </Link>
         </div>

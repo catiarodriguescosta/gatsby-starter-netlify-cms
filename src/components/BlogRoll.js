@@ -146,6 +146,7 @@ export default () => (
       query BlogRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 3
           filter: { frontmatter: { templateKey: { eq: "recipe-post" } } }
         ) {
           edges {
