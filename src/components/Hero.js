@@ -32,7 +32,7 @@ const HeroLogo = styled.div`
 `
 
 const Hero= ({ Heading,  SubHeading, ImgSrc}) => (
-    <HeroDiv style ={ { background: (ImgSrc == "" ? "a" : "url("+ImgSrc+") center center / cover  fixed"), minHeight: (ImgSrc == "" ? "70vh" : "50vh") }}>        
+    <HeroDiv style ={ { background: (ImgSrc === "" ? "a" : "url("+ImgSrc+") center center / cover  fixed"), minHeight: (ImgSrc === "" ? "70vh" : "50vh") }}>        
         <HeroContent>
             <HeroLogo>
                 {Heading}

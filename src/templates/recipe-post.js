@@ -326,7 +326,7 @@ export const RecipePostTemplate = ({
         <div className="o-container">
           <RecipeWrapper>
             <RecipeRow>
-              <RecipeTitle>{title}</RecipeTitle>
+              <RecipeTitle className="RecipeTitle">{title}</RecipeTitle>
             </RecipeRow>
             <RecipeRow>
               <RecipeStatistics>
@@ -363,35 +363,35 @@ export const RecipePostTemplate = ({
             <RecipeRow>
               <RecipeTable>
                 <header>
-                  <div class="col">
+                  <div className="col">
                     <img src={servingIcon} className="table-icons" alt="Servings"
                       style={{ width: '3.7em', height: '3.7em', paddingTop: '4px', marginBottom: '-8px'}} />
                     <div>Servings</div>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <img src={heaIcon} className="table-icons" alt="Helthy Extra A"/>
                     <div>HE A</div>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <img src={hebIcon} className="table-icons" alt="Helthy Extra B"/>
                     <div>HE B</div>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <img src={synsIcon} className="table-icons" alt="Syns" />
                     <div>SYNS</div>
                   </div>
                 </header>
-                <div class="row">
-                  <div class="col">{servings}</div>
-                  <div class="col">{total_hea}</div>
-                  <div class="col">{total_heb}</div>
-                  <div class="col">{total_syns}</div>
+                <div className="row">
+                  <div className="col">{servings}</div>
+                  <div className="col">{total_hea}</div>
+                  <div className="col">{total_heb}</div>
+                  <div className="col">{total_syns}</div>
                 </div>
-                <div class="row">
-                  <div class="col">1</div>
-                  <div class="col">{serving_hea}</div>
-                  <div class="col">{serving_heb}</div>
-                  <div class="col">{serving_syns}</div>
+                <div className="row">
+                  <div className="col">1</div>
+                  <div className="col">{serving_hea}</div>
+                  <div className="col">{serving_heb}</div>
+                  <div className="col">{serving_syns}</div>
                 </div>
               </RecipeTable>
               <RecipeExtraInfo>

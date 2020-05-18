@@ -29,7 +29,7 @@ const ContentText = styled.p`
 `
 
 const ContentRegion = ({ Heading, Text, Background}) => (
-    <div class="o-container">
+    <div className="o-container">
         <ContentDiv>
             <ContentContainer  className={" o-container  o-container--small"}>
                 <ContentHeading>
