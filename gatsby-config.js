@@ -6,6 +6,8 @@ module.exports = {
     description:
       'This website contains recipes and tips to be on track of your weight loss and having a healthy lifestyle with some place for a few syns.',
     keywords: 'healthy recipes, slimming world recipes, synns, weight loss',
+    google_analytics: 'UA-166837831-1',
+  
   },
   plugins: [
     'gatsby-plugin-react-helmet',

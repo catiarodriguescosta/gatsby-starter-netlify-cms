@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description, keywords } = useSiteMetadata()
+  const { title, description, keywords, google_analytics } = useSiteMetadata()
   return (
     <div>
       <Helmet>
@@ -69,6 +69,16 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
+        { google_analytics ? (
+          <script>
+            {`window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', '${google_analytics}');
+            `}
+          </script>
+        ) : null}
       </Helmet>
       <Navbar />
       <div>{children}</div>

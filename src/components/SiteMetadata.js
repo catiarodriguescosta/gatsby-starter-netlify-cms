@@ -9,6 +9,7 @@ const useSiteMetadata = () => {
             title
             description
             keywords
+            google_analytics
           }
         }
       }
