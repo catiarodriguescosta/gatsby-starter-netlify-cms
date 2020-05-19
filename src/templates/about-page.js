@@ -3,25 +3,59 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Hero from '../components/Hero'
+import Graph from '../components/Graph'
+import ContentRegion from '../components/ContentRegion'
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
+
+    <>
+      <Hero
+          Page = {title}
+          ImgSrc = "/img/blog-index.jpg"
+          Heading= "a few things about me..."
+          SubHeading= ""                  
+      />
+      <section className="section">
+          <div className="o-container">
+            <ContentRegion 
+                Heading= {title} 
+                Text= {content}
+            />
+          </div>
+      </section>
+      <section className="section">
+          <div className="o-container">
+            <Graph />
+          </div>
+      </section>
+
+
+{/*       <section className="section section--gradient">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="section">
+                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+                  {title}
+                </h2>
+                
+                <PageContent className="content" content={content} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section> */}
+  </>
+
+
+
+
+
+    
   )
 }
 

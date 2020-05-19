@@ -81,6 +81,21 @@ h2, h3, h4, h5 {
   margin-bottom: $global-spacing;
 }
 
+text {
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.recharts-wrapper {
+  margin: auto;
+}
+
+/* .recharts-default-tooltip{  
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: 14px !important;
+} */
 
 img {
   max-width: 100%;
