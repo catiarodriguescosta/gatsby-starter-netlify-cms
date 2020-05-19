@@ -70,13 +70,14 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
         { google_analytics ? (
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166837831-1"/>
           <script>
-            {`window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', '${google_analytics}');
-            `}
+          {`
+            window.dataLayer = window.dataLayer || []; function
+              gtag(){dataLayer.push(arguments)}
+              gtag('js', new Date()); gtag('config','${google_analytics}');
+          `}
           </script>
         ) : null}
       </Helmet>
