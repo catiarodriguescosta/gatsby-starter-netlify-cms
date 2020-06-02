@@ -69,7 +69,7 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
-        { google_analytics ? (
+        {/* { google_analytics ? (
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166837831-1"/>
           <script>
@@ -79,7 +79,7 @@ const TemplateWrapper = ({ children }) => {
               gtag('js', new Date()); gtag('config','${google_analytics}');
           `}
           </script>
-        ) : null}
+        ) : null} */}
       </Helmet>
       <Navbar />
       <div>{children}</div>
