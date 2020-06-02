@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import heroImg from '../img/hero.jpg'
 
 
 const HeroDiv = styled.div`
-    background: url('/img/home.jpg') center center / cover fixed;
+    background: url(${heroImg}) center center / cover fixed;
     width: 100%;
     min-height: 70vh;
     display: flex;
