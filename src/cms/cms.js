@@ -7,10 +7,38 @@ import RecipePostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
+import React, { useState, useEffect } from 'react';
+import { StyleSheetManager } from 'styled-components';
+
+function StyleInjector({ children }) {
+  const [iframeRef, setIframeRef] = useState(null);
+
+  useEffect(() => {
+    const iframe = document.getElementsByTagName('iframe')[0];
+    const iframeHeadElem = iframe.contentDocument.head;
+    setIframeRef(iframeHeadElem);
+  }, []);
+
+  return (
+    iframeRef && (
+      <StyleSheetManager target={iframeRef}>{children}</StyleSheetManager>
+    )
+  );
+}
+
+export default function withStyledComponentsRendered(Comp) {
+  return props => (
+    <StyleInjector>
+      <Comp {...props} />
+    </StyleInjector>
+  );
+}
+
+
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
-CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
-CMS.registerPreviewTemplate('recipe', RecipePostPreview)
+CMS.registerPreviewTemplate('index', withStyledComponentsRendered(IndexPagePreview))
+CMS.registerPreviewTemplate('about', withStyledComponentsRendered(AboutPagePreview))
+CMS.registerPreviewTemplate('products', withStyledComponentsRendered(ProductPagePreview))
+CMS.registerPreviewTemplate('recipe', withStyledComponentsRendered(RecipePostPreview))
