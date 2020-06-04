@@ -7,62 +7,38 @@ import RecipePostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
-import React from 'react'
-import { StyleSheetManager } from 'styled-components'
+import React, { useState, useEffect } from 'react';
+import { StyleSheetManager } from 'styled-components';
 
-//Component used to Enable netlify CMS to apply the styles added through styled-components
-class CSSInjector extends React.Component {
-  constructor(props) {
-    super(props)
+function StyleInjector({ children }) {
+  const [iframeRef, setIframeRef] = useState(null);
 
-    this.state = {
-      iframeRef: ''
-    }
-  }
-
-  componentDidMount() {
-    const iframe = document.querySelector(".nc-previewPane-frame")
+  useEffect(() => {
+    const iframe = document.getElementsByTagName('iframe')[0];
     const iframeHeadElem = iframe.contentDocument.head;
-    this.setState({ iframeRef: iframeHeadElem })
-  }
+    setIframeRef(iframeHeadElem);
+  }, []);
 
-  render() {
-    return (
-      <div>
-        { this.state.iframeRef && (
-          <StyleSheetManager target={this.state.iframeRef}>
-            { this.props.children }
-          </StyleSheetManager>
-        )}
-      </div>
+  return (
+    iframeRef && (
+      <StyleSheetManager target={iframeRef}>{children}</StyleSheetManager>
     )
-  }
+  );
 }
+
+export default function withStyledComponentsRendered(Comp) {
+  return props => (
+    <StyleInjector>
+      <Comp {...props} />
+    </StyleInjector>
+  );
+}
+
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
-CMS.registerPreviewTemplate('index', props => (
-  <CSSInjector>
-    <IndexPagePreview {...props} />
-  </CSSInjector>
-))
-CMS.registerPreviewTemplate('about', props => (
-    <CSSInjector>
-      <AboutPagePreview {...props} />
-    </CSSInjector>
-  )
-)
-CMS.registerPreviewTemplate('products', props => (
-    <CSSInjector>
-      <ProductPagePreview {...props} />
-    </CSSInjector>
-  )
-)
-CMS.registerPreviewTemplate('recipe', props => (
-    <CSSInjector>
-      <RecipePostPreview {...props} />
-    </CSSInjector>
-  )
-)
-
+CMS.registerPreviewTemplate('index', withStyledComponentsRendered(IndexPagePreview))
+CMS.registerPreviewTemplate('about', withStyledComponentsRendered(AboutPagePreview))
+CMS.registerPreviewTemplate('products', withStyledComponentsRendered(ProductPagePreview))
+CMS.registerPreviewTemplate('recipe', withStyledComponentsRendered(RecipePostPreview))
