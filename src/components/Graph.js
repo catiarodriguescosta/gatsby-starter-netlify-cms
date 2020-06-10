@@ -18,9 +18,10 @@ const data = [
     {name: '28-04-2020', week: 'W13' ,  lb: -13,   lbw:  0   },
     {name: '05-05-2020', week: 'W14' ,  lb: -14.5, lbw: -1.5 },
     {name: '12-05-2020', week: 'W15' ,  lb: -15.5, lbw: -1   },
-    {name: '19-05-2020', week: 'W16' ,  lb: -14  , lbw:  1.5 },
-    {name: '26-05-2020', week: 'W17' ,  lb: -16.5, lbw: -2.5 },
-    {name: '02-06-2020', week: 'W18' ,  lb: -15.5, lbw:  1   },
+    {name: '19-05-2020', week: 'W16' ,  lb: -14  , lbw:  1.5 }, 
+    {name: '26-05-2020', week: 'W17' ,  lb: -16.5, lbw: -2.5 }, 
+    {name: '02-06-2020', week: 'W18' ,  lb: -15.5, lbw:  1   }, 
+    {name: '09-06-2020', week: 'W19' ,  lb: -17.5, lbw: -2   }, 
 ];
 
 const tooltip_style = {
