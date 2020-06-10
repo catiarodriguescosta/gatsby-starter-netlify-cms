@@ -7,7 +7,8 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-import styled from "styled-components"
+//import styled from "styled-components"
+import "../templates/recipe-post.scss"
 
 import servingIcon from '../img/icons/lunch.svg'
 import timeIcon from '../img/icons/whisk.svg'
@@ -16,7 +17,7 @@ import heaIcon from '../img/icons/milk-container.svg'
 import hebIcon from '../img/icons/wheat.svg'
 import synsIcon from '../img/icons/lollipop-spiral.svg'
 
-
+{/*  
 const HeroRecipe = styled.section`
     background-size: cover;
     background-position: bottom;
@@ -289,6 +290,8 @@ const RecipeMealType = styled.div`
   }
 `
 
+*/}
+
 
 export const RecipePostTemplate = ({
   content,
@@ -315,53 +318,53 @@ export const RecipePostTemplate = ({
 
   return (
     <div>
-    <HeroRecipe style={{
+    <section className="HeroRecipe" style={{
             backgroundImage: `url(${
               !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
             })`,
           }} /> 
 
 
-      <Recipe>
+      <section className="Recipe">
         <div className="o-container">
-          <RecipeWrapper>
-            <RecipeRow>
-              <RecipeTitle className="RecipeTitle">{title}</RecipeTitle>
-            </RecipeRow>
-            <RecipeRow>
-              <RecipeStatistics>
+          <div className="RecipeWrapper">
+            <div className="RecipeRow">
+              <h2 className="RecipeTitle">{title}</h2>
+            </div>
+            <div className="RecipeRow">
+              <div className="RecipeStatistics">
                 <img src={difficultyIcon} className={"header-icons " + (difficulty >= 1  ? "" : 'disabled')} alt="Difficulty-1" />   
                 <img src={difficultyIcon} className={"header-icons " + (difficulty >= 2  ? "" : 'disabled')} alt="Difficulty-2" />
                 <img src={difficultyIcon} className={"header-icons " + (difficulty >= 3  ? "" : 'disabled')} alt="Difficulty-3" />
                 <div className="header-icons__label">DIFFICULTY</div>
-              </RecipeStatistics>
-               <RecipeStatistics>
+              </div>
+              <div className="RecipeStatistics">
                 <img src={timeIcon} className={"header-icons " + (time >= 1  ? "" : 'disabled')}  alt="Time-1" />
                 <img src={timeIcon} className={"header-icons " + (time >= 2  ? "" : 'disabled')}  alt="Time-2" />
                 <img src={timeIcon} className={"header-icons " + (time >= 3  ? "" : 'disabled')}  alt="Time-3" />
                 <div className="header-icons__label">TIME</div>
-              </RecipeStatistics> 
-              <RecipeStatistics>
+              </div> 
+              <div className="RecipeStatistics">
                 <div className="header-icons__wrapper">
                   <img src={servingIcon} className="header-icons--serving" alt="Servings"/>
                   <p className="header-icons__desc">&nbsp;&nbsp;{servings}</p>
                 </div>
                 <div className="header-icons__label">SERVINGS</div>
-              </RecipeStatistics>
-            </RecipeRow>
-            <RecipeInnerDivider />
-            <RecipeRow>
-              <RecipeIngredients>
+              </div>
+            </div>
+            <div className="RecipeInnerDivider" />
+            <div className="RecipeRow">
+              <div className="RecipeIngredients">
                 {IngredientsList.map(ingredient => (
                   <p>{ingredient}</p>
                 ))}
-              </RecipeIngredients>
-              <RecipeProcedure>
+              </div>
+              <div className="RecipeProcedure">
                 <PostContent content={content} />
-              </RecipeProcedure>
-            </RecipeRow>
-            <RecipeRow>
-              <RecipeTable>
+              </div>
+            </div>
+            <div className="RecipeRow">
+              <div className="RecipeTable">
                 <header>
                   <div className="col">
                     <img src={servingIcon} className="table-icons" alt="Servings"
@@ -393,9 +396,9 @@ export const RecipePostTemplate = ({
                   <div className="col">{serving_heb}</div>
                   <div className="col">{serving_syns}</div>
                 </div>
-              </RecipeTable>
-              <RecipeExtraInfo>
-                <RecipeTags>
+              </div>
+              <div className="RecipeExtraInfo">
+                <div className="RecipeTags">
                   {tags && tags.length ? (
                     <div>
                       <h6>Tags</h6>
@@ -408,8 +411,8 @@ export const RecipePostTemplate = ({
                       </ul>
                     </div>
                   ) : null}
-                </RecipeTags>
-                <RecipeMealType>
+                </div>
+                <div className="RecipeMealType">
                   {meal_type && meal_type.length ? (
                     <div>
                       <h6>Meal Type</h6>
@@ -422,12 +425,12 @@ export const RecipePostTemplate = ({
                       </ul>
                     </div>
                   ) : null}
-                </RecipeMealType>
-              </RecipeExtraInfo>
-            </RecipeRow>
-          </RecipeWrapper>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Recipe>
+      </section>
 
 
 {/*     <section className="section">
