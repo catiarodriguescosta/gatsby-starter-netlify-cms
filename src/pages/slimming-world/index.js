@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 
 
-export default class RecipesIndexPage extends React.Component {
+export default class SlimmingWorldIndexPage extends React.Component {
   render() {
     return (
       <Layout>
