@@ -16,7 +16,7 @@
 }
 
 .RecipeWrapper {
-  background: #FCF9EE;
+  background: var(--quaternary);
   padding: 15px 25px;  
 }
 
@@ -32,7 +32,7 @@
 }
 
 .RecipeStatistics {
-    font-family: "Barlow Semi Condensed";
+    font-family: var(--font-secondary);
     font-weight: 700;
     text-align: center;
     padding-right: 25px;
@@ -42,7 +42,7 @@
   
 
 .RecipeStatistics  .header-icons__label{
-    font-size: 14px;
+    font-size: var(--size-centi);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -63,7 +63,7 @@
 }
 
 .RecipeStatistics .header-icons__desc {
-    font-size: 22px;
+    font-size: var(--size-epsilon);
     font-weight: 600;
     margin-top: 1px;
     margin-bottom: 0px;
@@ -84,7 +84,7 @@
 .RecipeIngredients {
 
   width: 100%;
-  font-family: "Barlow Semi Condensed";
+  font-family: var(--font-secondary);
   font-weight: 600;
   padding-bottom: 10px;
   
@@ -106,7 +106,7 @@
 
 .RecipeProcedure {
   width: 100%;
-  font-family: "Barlow Semi Condensed";
+  font-family: var(--font-secondary);
   font-weight: 400;
   padding-bottom: 20px;
 
@@ -145,7 +145,7 @@
 .RecipeTable {
   width: 100%;
   height: 100%;
-  font-family: "Barlow Semi Condensed";
+  font-family: var(--font-secondary);
   font-weight: 600;
   font-size: 16px; 
   border: 1px solid;
@@ -198,7 +198,7 @@
 }
 
 .RecipeExtraInfo {
-  font-family: "Barlow Semi Condensed";
+  font-family: var(--font-secondary);
   font-weight: 400;
   width: 100%;
   display: flex;

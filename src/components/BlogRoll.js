@@ -2,72 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import styled from "styled-components"
+import "./BlogRoll.scss"
 
-
-
-const BlogGrid = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-
-`
-
-const BlogPost = styled.article`
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-  box-shadow: 0 0 5px #d5d5d5;
-  transition: 0.25s;
-  &:hover{
-    box-shadow: 0 0 30px #d5d5d5;
-  }
-  a {
-    color: #333;
-  }
-
-  @media(min-width: 768px) {
-    width: 48%;
-    margin: 1%;
-  }
-
-  @media(min-width: 960px) {
-    width: 31%;
-    margin: 1%;
-  }
-
-`
-const BlogPostThumbnail = styled.div`
-
-`
-
-const BlogPostTitle = styled.h5`
-  margin: 0;
-`
-
-const BlogPostBody = styled.div`
-  padding: 10px;
-  text-align: center;
-`
-
-const BlogPostData = styled.p`
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: "Barlow Semi Condensed";
-  font-weight: 400;
-  color: #ea7878;
-  padding: 5px 10px 10px; 
-  text-align: center;
-  
-`
-
-const BlogPostClassification = styled.span`
-
-`
 
 
 class BlogRoll extends React.Component {
@@ -76,14 +12,13 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <BlogGrid>
+      <section className="BlogGrid">
         {posts &&
           posts.map(({ node: post }) => (
-            <BlogPost key={post.id}>
-                
+            <article className="BlogPost" key={post.id}>
                   <header>
                     {post.frontmatter.featuredimage ? (
-                      <BlogPostThumbnail>
+                      <div className="BlogPostThumbnail">
                         <Link to={post.fields.slug}>
                           <PreviewCompatibleImage
                             imageInfo={{
@@ -92,24 +27,23 @@ class BlogRoll extends React.Component {
                             }}
                           />
                         </Link>
-                      </BlogPostThumbnail>
+                      </div>
                     ) : null }
                     
-                    <BlogPostBody>
+                    <div className="BlogPostBody">
                       <Link to={post.fields.slug}>
-                        <BlogPostTitle>{post.frontmatter.title}</BlogPostTitle>
+                        <h5 className="BlogPostTitle">{post.frontmatter.title}</h5>
                       </Link>
-                      
-                    </BlogPostBody>
+                    </div>
 
                   </header>
 
-                  <BlogPostData>
+                  <div className="BlogPostData">
                         
                         <b>{post.frontmatter.serving_syns}</b>
-                        <span> syn (s) <em>per serving</em> &nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+                        <span> syn (s) per serving &nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
                         <b>{post.frontmatter.total_syns}</b>
-                        <span> syn (s) <em>per total</em></span>
+                        <span> syn (s) per total</span>
 
                         {/* { (post.frontmatter.classification === "free" || post.frontmatter.classification === "" )  ? null : (
                           <span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
@@ -122,12 +56,12 @@ class BlogRoll extends React.Component {
                           post.frontmatter.total_syns,
                           <span>syn (s) <em>per total</em></span>
                         )} */}
-                  </BlogPostData>
+                  </div>
                 
-              </BlogPost>
+              </article>
           ))}
 
-      </BlogGrid>
+      </section>
     )
   }
 }

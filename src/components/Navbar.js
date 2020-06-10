@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import NavbarLinks from "./NavLinks"
 import { Link } from "gatsby"
 import styled from 'styled-components'
+//import "./Navbar.scss"
 
 
 const Logo = styled.h1`
-  font-family: "pacifico";
   font-size: 30px;
 `
 const Navigation = styled.nav`
@@ -97,10 +97,33 @@ const Hamburger = styled.div`
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
+
+  {/* 
+    changeBackground = () => {
+    let scrolled = document.documentElement.scrollTop;
+    if (scrolled >= 500) {
+      this.setState({ whiteBackground: true });
+    } 
+    else {
+      this.setState({ whiteBackground: false });
+    }
+  }
+
+  componentDidMount = () => {
+    this.setState({ currentPath: this.props.location.pathname })
+    document.addEventListener('scroll', this.changeBackground);
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener('scroll', this.changeBackground);
+  }
+  
+  */}
+
   return (
     <Navigation>
       <Link to="/">
-        <Logo >a few syns a day...</Logo>
+        <Logo>a few syns a day...</Logo>
       </Link>
 
       <Toggle

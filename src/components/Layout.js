@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import InstagramFeed from './InstagramFeed'
 import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
@@ -61,7 +62,6 @@ const TemplateWrapper = ({ children }) => {
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
-
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
@@ -69,20 +69,11 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
-        {/* { google_analytics ? (
-
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166837831-1"/>
-          <script>
-          {`
-            window.dataLayer = window.dataLayer || []; function
-              gtag(){dataLayer.push(arguments)}
-              gtag('js', new Date()); gtag('config','${google_analytics}');
-          `}
-          </script>
-        ) : null} */}
       </Helmet>
       <Navbar />
       <div>{children}</div>
+
+      <InstagramFeed count="6" />
       <Footer />
     </div>
   )

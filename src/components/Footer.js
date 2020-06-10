@@ -17,7 +17,6 @@ const FooterDiv = styled.footer`
 `
 
 const FooterLogo = styled.h1`
-  font-family: "Pacifico";
   font-size: 25px;
   margin-bottom: 30px;
 `
@@ -31,7 +30,7 @@ const FooterSocial = styled.div`
 
 `
 const Copyrights = styled.p`
-  font-size: 12px;
+  font-size: var(--size-micro);
 `
 
 const Footer = class extends React.Component {

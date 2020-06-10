@@ -1,69 +1,60 @@
 @charset "UTF-8";
 
-//@import "~bulma/sass/utilities/initial-variables";
-
-//@import "~bulma";
-
 //============================
 //*	$SETTINGS
 //	Preprocessor variables and methods
 //
-@import "settings/global";
-@import "settings/typography";
-@import "settings/spacing";
-@import "settings/colours";
-@import "settings/mq";
-@import "settings/zindex";
-@import "settings/animation";
+@import "../globalStyles/settings/global";
+//@import "../globalStyles/settings/typography";
+@import "../globalStyles/settings/spacing";
+//@import "../globalStyles/settings/colours";
+@import "../globalStyles/settings/mq";
+@import "../globalStyles/settings/zindex";
+//@import "../globalStyles/settings/animation";
 
 //============================
 //*	$TOOLS
 //	Mixins and functions
 //
-//@import "tools/functions";
-@import "tools/font_size";
-@import "tools/zindex";
-@import "tools/mq";
-//@import "tools/position";
-@import "tools/ratio";
-@import "tools/object-fit";
+//@import "../globalStyles/tools/functions";
+@import "../globalStyles/tools/font_size";
+///@import "../globalStyles/tools/zindex";
+@import "../globalStyles/tools/mq";
+//@import "../globalStyles/tools/position";
+@import "../globalStyles/tools/ratio";
+@import "../globalStyles/tools/object-fit";
 
 
 //============================
 //*	$ELEMENTS
 //	Single HTML element selectors without classes
 //
-@import "elements/page";
-//@import "elements/type";
-//@import "elements/images";
+//@import "../globalStyles/elements/page";
+//@import "../globalStyles/elements/type";
+//@import "../globalStyles/elements/images";
+
 
 //============================
-//*	$VENDOR
-//	Third-party Library-specific CSS e.g. Flickity
-//
-//@import "vendor/all";
-
-//============================
-//	$OBJECTS
+//*	$OBJECTS
 //  Classes for page structure typically following the OOCSS methodology
 //  The first layer in which we find class-level specificity
 //
-//@import "objects/flex";
-@import "objects/container";
-//@import "objects/row";
-//@import "objects/grid";
-//@import "objects/media";
-//@import "objects/flex-media";
-//@import "objects/img";
-//@import "objects/main";
+//@import "../globalStyles/objects/flex";
+@import "../globalStyles/objects/container";
+//@import "../globalStyles/objects/row";
+//@import "../globalStyles/objects/grid";
+//@import "../globalStyles/objects/media";
+//@import "../globalStyles/objects/flex-media";
+//@import "../globalStyles/objects/img";
+//@import "../globalStyles/objects/main";
 
 //============================
-//	$TYPOGRAPHY
+//*	$TYPOGRAPHY
 //  Classes for the display and control of your typography.
 //  These elements sit loosely between objects and components and in turn can be overridden on a piece of UI
 //
-@import "typography/heading";
-@import "typography/copy";
+//@import "../globalStyles/typography/heading";
+//@import "../globalStyles/typography/copy";
 
 
 //============================
@@ -71,46 +62,248 @@
 //	utilities classes in accordance with DRY mentality. Eliminates the need to create specific classes to perform simple tasks
 //  NOTE: Use sparingly
 //
-//@import "utilities/util";
+//@import "../globalStyles/utilities/util";
 
 
 
-h2, h3, h4, h5 {
-  font-family: $font-tertiary;
-  text-align: center;
-  margin-bottom: $global-spacing;
+/* FONTS import */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Barlow+Semi+Condensed:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+
+:root {
+  --primary: #000;
+  --secondary: #fff;
+  --tertiary: goldenrod; 
+  --quaternary: #FCF9EE; /*background*/
+
+  --danger: #ff3d3d;
+  --error: #b42c2c;
+  --success: #090;
+  --notice: #ec921f;
+  --disabled: #dcdddf;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Barlow Semi Condensed', sans-serif;
+  --font-tertiary: "Abril Fatface", serif;
+  --font-quaternary: "Pacifico", serif;
+
+  --size-micro:   1.0rem;
+  --size-milli:   1.2rem;
+  --size-centi:   1.4rem;
+  --size-zeta :   1.8rem;
+  --size-epsilon: 2.2rem;
+  --size-delta:   2.6rem;
+  --size-gamma:   3.1rem;
+  --size-beta:    3.7rem;
+  --size-alpha:   6.0rem;
+}
+
+//SCROLLBAR
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 3px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary);
+}
+
+::selection {
+  background: rgba(0, 194, 189, 0.6);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  min-height: 100%;
+  background: white;
+}
+
+body {
+  font-family: var(--font-primary);
+  min-height: 100%;
+  position: relative;
+  color: var(--primary);
+  font-size: var(--size-zeta);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 15px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
 }
 
 text {
-  font-family: $font-secondary;
+  font-family: var(--font-secondary);
   font-weight: 600;
   font-size: 14px;
 }
 
-.recharts-wrapper {
-  margin: auto;
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
-/* .recharts-default-tooltip{  
-  font-family: $font-secondary;
+p > a {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+
+h2, h3, h4, h5 {
+  font-family: var(--font-tertiary);
+  text-align: center;
+  margin-bottom: $global-spacing;
+}
+
+h1 {
+  font-family: var(--font-quaternary);
+  text-transform: lowercase;
+}
+
+h2 {
+  font-size: var(--size-alpha);
+  line-height: 1.4;
+  @media (max-width: 768px) {
+    font-size: var(--size-beta);
+  }
+}
+
+h3 {
+  font-size: var(--size-gamma);
+  @media (max-width: 768px) {
+    font-size: var(--size-delta);
+  }
+}
+
+h4 {
+  font-size: var(--size-delta);
+  @media (max-width: 768px) {
+    font-size: var(--size-epsilon);
+  }
+}
+
+h5 {
+  font-size: var(--size-epsilon);
+}
+
+nav {
+  font-family: var(--font-secondary);
+}
+
+text {
+  font-family: var(--font-secondary);
   font-weight: 600;
-  font-size: 14px !important;
-} */
-
-img {
-  max-width: 100%;
+  font-size: 14px;
 }
 
-//NAV
-.navbar-brand .navbar-item.logo h1 {
-  font-family: $font-quaternary;
-  padding: 0 1rem;
+pre {
+  background: lightGrey;
+  line-height: 1.45;
+  font-size: 85%;
+  border-radius: 3px;
+  padding: 16px;
+}
+
+code {
+  font-size: 85%;
+  padding: 0.15em 0;
+  background: lightgrey;
+  border-radius: 3px;
+}
+code:before,
+code:after {
+  letter-spacing: -0.2em;
+  content: '\00a0';
+}
+pre code {
+  font-size: inherit;
+}
+pre code:before,
+pre code:after {
+  display: none;
+}
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  line-height: 1.1;
+  font-size: 1em;
+  font-style: italic;
+  border-left: 2px solid var(--tertiary);
 }
 
 
+
+/* Utility Classes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+
+
+/* Layout */
+
+.section {
+  width: 100%;
+  padding: 5rem 0;
+}
+.section:last-child {
+  border: 0;
+}
+.section.thick {
+  padding: 10rem 0;
+}
+.section.thin {
+  padding: 3.5rem 0;
+}
+.section.noPadding {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+    padding: 5rem 0;
+  }
+  .section.thick {
+    padding: 7rem 0;
+  }
+  .section.thin {
+    padding: 1.5rem 0;
+  }
+
+}
+
+ 
+/* BUTTONS */
 
 .c-btn {
-  font-family: $font-secondary;
+  font-family: var(--font-secondary);
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
@@ -118,16 +311,18 @@ img {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.25;
-  border: 2px solid $colour-primary;
+  border: 2px solid var(--primary);
   background-color: #fff;
   text-decoration: none;
   font-weight: 700;
-  color: $colour-primary;
+  color: var(--primary);
   text-align: center;
   transition: all .15s ease;
-  &:hover {
-    background-color: $colour-primary;
-    color: $colour-secondary;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background-color: var(--primary);
+    color: var(--secondary);
   }
 
   &__wrapper {
@@ -136,12 +331,48 @@ img {
   }
 }
 
+.c-btn[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: progress;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.recharts-wrapper {
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+//NAV
+/*.navbar-brand .navbar-item.logo h1 {
+  font-family: $font-quaternary;
+  padding: 0 1rem;
+}*/
+
+
+
+
+
 .u-text--center {
   text-align: center;
 }
 
 .full-width-image-container {
-
   width: 100vw;
   height: 400px;
   position: relative;
@@ -164,117 +395,3 @@ img {
   justify-content: center;
   align-items: center;
 }
-
-/* .navbar .navbar-menu {
-  box-shadow:none !important
-}
-
-
-.content .taglist {
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 1.5rem;
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: center;
-  li {
-    padding: 0 2rem 1rem 0;
-    margin-bottom: 1.5rem;
-    margin-top: 0;
-  }
-}
-
-// Helper Classes
-
-
-.btn {
-  display: inline-block
-  padding: 12px 16px 10px
-  font-size: 18px
-  font-size: 1rem
-  line-height: 1.25
-  background-color: #fff
-  border-radius: .25rem
-  text-decoration: none
-  font-weight: 700
-  color: #CC3700
-  text-align: center
-  -webkit-box-shadow: inset 0 0 0 2px #CC3700
-  box-shadow: inset 0 0 0 2px #f40
-  -webkit-transition: all .15s ease
-  transition: all .15s ease
-}
-
-.margin-top-0
-  margin-top: 0 !important
-
-.navbar-item .icon
-  color: $primary
-// Override for use of svg's from https://simpleicons.org/
-.icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
-
-footer.footer
-  padding: 3rem 0rem 0rem
-  background-color: transparent
-
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: $white-ter
-
-
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
-.social
-  padding: 2em
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
-
-// blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033;
-.blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
-.blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
-
-
-@import "~bulma"
-
-
-// responsiveness
-+tablet-only
-  .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
-
-+mobile
-  .blog-list-item header
-    display: block
-  .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
- */

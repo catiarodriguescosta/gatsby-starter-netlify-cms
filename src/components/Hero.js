@@ -21,10 +21,7 @@ const HeroContent = styled.div`
     justify-content: center;
 `
 const HeroHeadline  = styled.h2`
-  font-family: "abril Fatface";
-  font-size: 60px;
   color: white;
-
 `
 const HeroLogo = styled.div`
     font-family: "pacifico";
