@@ -1,67 +1,28 @@
 .BlogGrid {
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.BlogPost {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
-    box-shadow: 0 0 5px #d5d5d5;
-    transition: 0.25s;
+.BlogFilters {
+    background: var(--quaternary);
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-bottom: 10px;
 
-    &:hover{
-      box-shadow: 0 0 30px #d5d5d5;
+
+    .FilterGroupTitle {
+        font-size: var(--size-zeta);
+        font-family: var(--font-secondary);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 5px;
     }
-    a {
-      color: var(--primary);
+
+    .FilterGroup{
+        min-width: calc( 100% / 6 );
+        padding-left: 10px;
     }
-
-    @media(min-width: 768px) {
-      width: 48%;
-      margin: 1%;
-    }
-    
-    @media(min-width: 960px) {
-      width: 31%;
-      margin: 1%;
-    }
-}
-
-
-.BlogPostThumbnail {
-
-}
-
-.BlogPostTitle {
-    margin: 0;
-}
-
-
-.BlogPostBody {
-    padding: 10px;
-    text-align: center;
-}
-
-
-.BlogPostData {
-    font-size: var(--size--micro);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: "Barlow Semi Condensed";
-    font-weight: 400;
-    color: var(--tertiary);
-    padding: 5px 10px 10px; 
-    text-align: center;
-}
-  
-
-
-.BlogPostClassification {
-
 }
