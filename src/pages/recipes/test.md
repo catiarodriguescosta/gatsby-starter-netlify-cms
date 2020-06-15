@@ -7,6 +7,10 @@ featuredimage: /img/blog-index.jpg
 meal_type:
   - Breakfast
   - Snack
+dietary:
+  - norefinedsugar
+  - dairyfree
+  - glutenfree
 syn_category: very_low_syns
 list_of_ingredients:
   - 200ml milk
