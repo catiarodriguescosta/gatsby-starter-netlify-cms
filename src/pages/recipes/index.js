@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+//import BlogRoll from '../../components/BlogRoll'
 import Hero from '../../components/Hero'
-import styled from 'styled-components'
+import BlogRollWithFilters from '../../components/BlogRollWithFilters'
 
 
 
@@ -26,7 +26,7 @@ export default class RecipesIndexPage extends React.Component {
         <section className="section">
             <div className="o-container">
 
-              <BlogRoll />
+              <BlogRollWithFilters />
 
             </div>
         </section>

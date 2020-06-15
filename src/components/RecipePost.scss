@@ -1,0 +1,61 @@
+.RecipePost {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px #d5d5d5;
+    transition: 0.25s;
+
+    &:hover{
+      box-shadow: 0 0 30px #d5d5d5;
+    }
+    a {
+      color: var(--primary);
+    }
+
+    @media(min-width: 768px) {
+      width: 48%;
+      margin: 1%;
+    }
+    
+    @media(min-width: 960px) {
+      width: 31%;
+      margin: 1%;
+    }
+
+
+}
+
+.RecipePostThumbnail {
+
+
+}
+
+.RecipePostTitle {
+    margin: 0;
+}
+
+
+.RecipePostBody {
+    padding: 10px;
+    text-align: center;
+}
+
+
+.RecipePostData {
+    font-size: var(--size-milli);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: "Barlow Semi Condensed";
+    font-weight: 400;
+    color: var(--tertiary);
+    padding: 5px 10px 10px; 
+    text-align: center;
+}
+  
+
+
+.RecipePostClassification {
+
+}

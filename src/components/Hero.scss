@@ -1,0 +1,25 @@
+.Hero {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: columns;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeroContent {
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeroHeadlineWhite {
+    color: white;
+}
+
+.HeroLogo {
+    font-family: var(--font-quaternary);
+    font-size: 30px;
+    color: white;
+}

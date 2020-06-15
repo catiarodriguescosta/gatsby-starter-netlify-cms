@@ -26,7 +26,10 @@ const NavItem = styled(Link)`
     transition: all 0.4s ease-in;
   }
 
-  :hover {
+  :hover,
+  :focus, 
+  :active,
+  .active {
     color: goldenrod;
     ::after {
       width: 100%;
@@ -42,6 +45,7 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <>
+        <NavItem to="/">Home</NavItem>
         <NavItem to="/about">About</NavItem>
         <NavItem to="/recipes">Recipes</NavItem>
         <NavItem to="/tips">Tips</NavItem>
