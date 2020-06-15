@@ -60,8 +60,8 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Meal type", name: "meal_type", widget: "select", multiple: true, options: [{ label: "Breakfast", value: "Breakfast" }, { label: "Appettizer", value: "Appettizer" }, { label: "Main Meal", value: "Main" }, { label: "Dessert", value: "Dessert" }, { label: "Snack", value: "Snack" }]}
-      - {label: "Syn Category", name: "syn_category", widget: "select", options: [ { label: "Free", value: "free" }, { label: "Very Low Syns", value: "very_low_syns" }, { label: "Low Syns", value: "low_syns" }, { label: "No Category", value: "none" }] }
       — {label: "Dietary & Lifestyle",  name: "dietary", widget: "select", multiple: true, options: [{ label: "No Refined Sugar", value: "norefinedsugar" }, { label: "Gluten Free", value: "glutenfree" }, { label: "Dairy Free", value: "dairyfree" }, { label: "Vegetarian", value: "vegetarian" }, { label: "Vegan", value: "vegan" }]}
+      - {label: "Syn Category", name: "syn_category", widget: "select", options: [ { label: "Free", value: "free" }, { label: "Very Low Syns", value: "very_low_syns" }, { label: "Low Syns", value: "low_syns" }, { label: "No Category", value: "none" }]}
       - label: "Ingredients"
         name: "list_of_ingredients"
         widget: "list"
