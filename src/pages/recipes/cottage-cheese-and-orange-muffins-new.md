@@ -7,6 +7,8 @@ featuredimage: /img/products-grid3.jpg
 meal_type:
   - Dessert
   - Snack
+dietary:
+  - norefinedsugar
 syn_category: very_low_syns
 list_of_ingredients:
   - 4 eggs
